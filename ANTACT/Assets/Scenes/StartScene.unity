@@ -734,6 +734,7 @@ GameObject:
   - component: {fileID: 1654175992}
   - component: {fileID: 1654175991}
   - component: {fileID: 1654175994}
+  - component: {fileID: 1654175995}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -804,7 +805,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1654175992}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1654175995}
+        m_TargetAssemblyTypeName: MoveScene, Assembly-CSharp
+        m_MethodName: LoadTargetScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1654175992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,6 +872,19 @@ MonoBehaviour:
   hoverTextColor: {r: 46, g: 3, b: 3, a: 1}
   normalBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
   hoverBackgroundColor: {r: 0, g: 0.39215687, b: 0, a: 1}
+--- !u!114 &1654175995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654175989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb583a57cb1a03e4791a4ec48f5c2d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSceneName: GameScene
 --- !u!1 &1870271317
 GameObject:
   m_ObjectHideFlags: 0
