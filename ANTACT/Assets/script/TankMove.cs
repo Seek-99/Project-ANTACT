@@ -3,31 +3,25 @@ using UnityEngine.InputSystem;
 
 public class TankMove : MonoBehaviour
 {
-    new Rigidbody2D rigidbody2D; // new Å°¿öµå Ãß°¡
+    new Rigidbody2D rigidbody2D;
+    public float moveSpeed = 5f;     // ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½
+    public float rotateSpeed = 100f; // È¸ï¿½ï¿½ ï¿½Óµï¿½ (ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½)
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void OnMove(InputValue inputValue)
     {
         Vector2 input = inputValue.Get<Vector2>();
-        //Debug.Log("x: " + input.x + ", y: " + input.y);
-        if (input.magnitude > 0)
-        {
-            rigidbody2D.linearVelocity = input; // ÀÔ·Â º¤ÅÍ¸¦ ±×´ë·Î Àû¿ë
-        }
-        else
-        {
-            rigidbody2D.linearVelocity = Vector2.zero;
-        }
+
+        // W/S: ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ (input.y)
+        float moveDirection = input.y;
+        rigidbody2D.linearVelocity = transform.up * moveDirection * moveSpeed;
+
+        // A/D: È¸ï¿½ï¿½ (input.x)
+        float rotateDirection = -input.x; // (-)ï¿½ï¿½ ï¿½Ý´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        rigidbody2D.angularVelocity = rotateDirection * rotateSpeed;
     }
 }
