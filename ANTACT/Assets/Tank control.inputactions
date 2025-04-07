@@ -15,10 +15,10 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "TurretMove",
+                    "name": "RotateTurret",
                     "type": "Value",
-                    "id": "721c9beb-ed91-4b04-a8e1-d01306a1158f",
-                    "expectedControlType": "",
+                    "id": "742da6e2-5ab3-43c9-b9cc-e5461bdbd125",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -81,35 +81,35 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "3aff70d9-0a66-4f6a-a424-335087e92230",
-                    "path": "2DVector",
+                    "name": "1D Axis",
+                    "id": "3ea4849b-5c70-43a5-8015-f91146cb96ca",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "TurretMove",
+                    "action": "RotateTurret",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Left",
-                    "id": "4d95bd0a-2393-4897-8f5c-ba0ea4039e51",
+                    "name": "negative",
+                    "id": "9b98656a-e5aa-4ca0-84a9-74da524f0be4",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "TurretMove",
+                    "action": "RotateTurret",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Right",
-                    "id": "84412271-d4c3-4e41-8c58-b3a2dfb06071",
+                    "name": "positive",
+                    "id": "c9e1f8cc-cd4c-40b9-babe-2f45b43df9c8",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "TurretMove",
+                    "action": "RotateTurret",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
