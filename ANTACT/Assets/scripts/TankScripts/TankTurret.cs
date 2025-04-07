@@ -5,26 +5,36 @@ public class TankTurret : MonoBehaviour
     [Header("Rotation Settings")]
     [SerializeField] private float rotateSpeed = 200f;
     [SerializeField] private bool useSmoothRotation = true;
+    [SerializeField] private float smoothRotationSpeed = 5f; // 부드러운 회전을 위한 추가 변수
+
+    private float currentRotationInput = 0f;
 
     // 외부(TankInputController)에서 호출될 회전 메서드
     public void HandleRotation(float input)
     {
-        if (input == 0) return;
+        // 입력 값을 저장 (0이어도 저장)
+        currentRotationInput = input;
+    }
+
+    private void Update()
+    {
+        // 입력이 없으면 회전하지 않음
+        if (currentRotationInput == 0) return;
 
         if (useSmoothRotation)
         {
-            // 부드러운 회전 (Lerp)
-            float targetAngle = transform.eulerAngles.z - input * rotateSpeed * Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(
+            // 부드러운 회전 (Slerp 사용)
+            float targetAngle = transform.eulerAngles.z - currentRotationInput * rotateSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.Slerp(
                 transform.rotation,
                 Quaternion.Euler(0, 0, targetAngle),
-                0.2f
+                smoothRotationSpeed * Time.deltaTime
             );
         }
         else
         {
             // 즉각적인 회전
-            transform.Rotate(0, 0, -input * rotateSpeed * Time.deltaTime);
+            transform.Rotate(0, 0, -currentRotationInput * rotateSpeed * Time.deltaTime);
         }
     }
 }
