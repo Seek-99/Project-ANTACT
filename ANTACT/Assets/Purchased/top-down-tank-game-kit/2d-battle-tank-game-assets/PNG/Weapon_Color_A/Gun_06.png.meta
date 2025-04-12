@@ -107,8 +107,8 @@ TextureImporter:
         y: 0
         width: 71
         height: 164
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.51495045, y: 0.28856525}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7e9fc498da7fe9c49ae0e89ea53e842b
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gun_06_0: 7939655268091056468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

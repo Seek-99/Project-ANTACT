@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8260035535910962441}
   - component: {fileID: 6144122859809377258}
   - component: {fileID: 6755541242337656203}
+  - component: {fileID: 1410927709055203733}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -80,6 +81,20 @@ MonoBehaviour:
   m_DefaultActionMap: Tank
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1410927709055203733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735823212969435077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2035b201e1f9743acc6cea2d7a1573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthSlider: {fileID: 0}
 --- !u!1 &6360097066322513580
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1880120661550918566, guid: 3ae4eabf7ac39fc4a9e49353c1069d9b, type: 3}
+  m_Sprite: {fileID: -4808999197000344924, guid: 8fe56c9d3bc890e459a1121bb805d931, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -287,10 +302,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -833480429
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -539579915749326718, guid: c28a642567920b049bec03255609d2f4, type: 3}
+  m_Sprite: {fileID: 7939655268091056468, guid: 46cdfc49c593e0441bfa349d2f1c0157, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
