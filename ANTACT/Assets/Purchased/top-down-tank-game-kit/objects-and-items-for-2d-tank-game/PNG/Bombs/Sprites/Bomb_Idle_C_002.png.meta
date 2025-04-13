@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bomb_Idle_C_002_0: 782193759583065975
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

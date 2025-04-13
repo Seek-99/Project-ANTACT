@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Puddle_01_0: -7696208781137641483
+      Puddle_01_1: 2185759136675556655
+      Puddle_01_2: -1452230890283810083
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

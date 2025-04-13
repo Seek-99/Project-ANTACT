@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hedge_B_02_0: -223138766201798263
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

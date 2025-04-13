@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hangar_BTN_0: 8654713178540964003
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -484,7 +484,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tire_Track_02_0: 3259923140129435401
+      Tire_Track_02_1: 1194157052731526482
+      Tire_Track_02_10: -1951295168260328390
+      Tire_Track_02_11: -348135417473141721
+      Tire_Track_02_12: 4515714587791104673
+      Tire_Track_02_13: -7285927231043577783
+      Tire_Track_02_14: -2333197863196964103
+      Tire_Track_02_2: -988848510106159144
+      Tire_Track_02_3: 2850296099709266385
+      Tire_Track_02_4: -2030478771211779053
+      Tire_Track_02_5: -4505209865038741849
+      Tire_Track_02_6: 1772884551998135066
+      Tire_Track_02_7: 3556906304906179306
+      Tire_Track_02_8: -5013393833970618686
+      Tire_Track_02_9: 7949362183704602433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

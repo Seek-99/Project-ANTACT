@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Puddle_05_0: 569612752785912493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

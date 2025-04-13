@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Top_Down_Tank_Game_GUI_Logo_0: 6869978060455689431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sprite_Fire_Shots_Impact_B_001_0: 2077267686305299562
+      Sprite_Fire_Shots_Impact_B_001_1: -6764854008978126361
+      Sprite_Fire_Shots_Impact_B_001_2: 2179193312052448301
+      Sprite_Fire_Shots_Impact_B_001_3: -6312157557086985021
+      Sprite_Fire_Shots_Impact_B_001_4: -4079763004830308049
+      Sprite_Fire_Shots_Impact_B_001_5: 4717834201899408183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

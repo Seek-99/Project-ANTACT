@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sprite_Fire_Shots_Flame_002_0: -7013976136658183471
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

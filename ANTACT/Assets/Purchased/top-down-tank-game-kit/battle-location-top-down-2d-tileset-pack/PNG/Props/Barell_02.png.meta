@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Barell_02_0: 9012410698969181400
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

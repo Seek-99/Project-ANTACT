@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      XP_Boost_Icon_0: -7629354309729586569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
