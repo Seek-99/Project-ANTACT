@@ -23,6 +23,16 @@ public class TankInputController : MonoBehaviour
         turret.HandleRotation(value.Get<float>() * turretSensitivity);
     }
 
+    // 발사 입력 함수 추가
+    public void OnFire(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            turret.Fire();
+        }
+    }
+
+
     // 유니티 에디터에서 자동 연결
     private void Reset()
     {
@@ -35,6 +45,12 @@ public class TankInputController : MonoBehaviour
         if (Keyboard.current.qKey.isPressed || Keyboard.current.eKey.isPressed)
         {
             Debug.Log("QE 키 입력 감지 중");
+        }
+
+        // Fire 액션 키 매핑
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            turret.Fire();
         }
     }
 }
