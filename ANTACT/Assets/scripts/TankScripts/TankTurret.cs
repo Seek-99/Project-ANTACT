@@ -37,4 +37,20 @@ public class TankTurret : MonoBehaviour
             transform.Rotate(0, 0, -currentRotationInput * rotateSpeed * Time.deltaTime);
         }
     }
+
+    //-----------발사 세팅-----------
+    [Header("Fire Settings")]
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float fireCooldown = 0.5f;
+
+    private float lastFireTime = 0f;
+
+    public void Fire()
+    {
+        if (Time.time - lastFireTime < fireCooldown) return;
+
+        lastFireTime = Time.time;
+        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+    }
 }
