@@ -821,29 +821,17 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 748372810}
-    - target: {fileID: 6837832092233806929, guid: 36ed88fa8291ad741a1440e91834c84f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -4808999197000344924, guid: 8fe56c9d3bc890e459a1121bb805d931, type: 3}
-    - target: {fileID: 6837832092233806929, guid: 36ed88fa8291ad741a1440e91834c84f, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7351431491192392503, guid: 36ed88fa8291ad741a1440e91834c84f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7939655268091056468, guid: 46cdfc49c593e0441bfa349d2f1c0157, type: 3}
     - target: {fileID: 7351431491192392503, guid: 36ed88fa8291ad741a1440e91834c84f, type: 3}
       propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351431491192392503, guid: 36ed88fa8291ad741a1440e91834c84f, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7351431491192392503, guid: 36ed88fa8291ad741a1440e91834c84f, type: 3}
       propertyPath: m_SortingLayerID
-      value: -833480429
-      objectReference: {fileID: 0}
-    - target: {fileID: 7351431491192392503, guid: 36ed88fa8291ad741a1440e91834c84f, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8260035535910962441, guid: 36ed88fa8291ad741a1440e91834c84f, type: 3}
       propertyPath: m_LocalPosition.x
