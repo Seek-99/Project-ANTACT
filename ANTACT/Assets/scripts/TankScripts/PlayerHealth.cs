@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [Header("Health Settings")]
     [Tooltip("플레이어의 최대 체력 값")]
@@ -37,5 +37,26 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    // 데미지 받는 함수 추가
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= Mathf.RoundToInt(amount);
+        Debug.Log("플레이어 피격! 남은 체력: " + currentHealth);
 
+        if (healthSlider != null)
+        {
+            healthSlider.value = currentHealth;
+        }
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log("플레이어 사망!");
+        Destroy(gameObject);
+    }
 }
