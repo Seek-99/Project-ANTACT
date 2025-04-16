@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private float speed = 100f;
     [SerializeField] private float lifeTime = 3f;
+    [SerializeField] private float damage = 30f; // 기본 데미지
 
     private Rigidbody2D rb;
 
@@ -17,8 +18,15 @@ public class Projectile : MonoBehaviour
     // 충돌 시
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // 충돌 시 파괴
         Debug.Log("포탄 충돌: " + collision.gameObject.name);
-        Destroy(gameObject);
+
+        // 피격 대상에게 데미지 부여
+        var damageable = collision.gameObject.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            damageable.TakeDamage(damage);
+        }
+
+        Destroy(gameObject); // 충돌 시 파괴
     }
 }
