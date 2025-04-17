@@ -11,7 +11,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [Tooltip("HP 바 슬라이더 참조")]
     public Slider healthSlider;
 
-    private int currentHealth;
+
+
+    [Tooltip("현재 체력 (인스펙터에서 확인용)")]
+    [SerializeField] private int currentHealth;
+
+
 
     void Start()
     {
@@ -59,4 +64,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         Debug.Log("플레이어 사망!");
         Destroy(gameObject);
     }
+    public int GetCurrentHealth() => currentHealth;
+
 }
