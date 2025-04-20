@@ -36,10 +36,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             healthSlider.maxValue = maxHealth;
             healthSlider.value = currentHealth;
         }
-        else
-        {
-            Debug.LogWarning("Health Slider가 할당되지 않았습니다!");
-        }
+
     }
 
     // 데미지 받는 함수 추가
