@@ -3,27 +3,27 @@ using UnityEngine;
 public class TankTurret : MonoBehaviour
 {
     [Header("Rotation Settings")]
-    [SerializeField] private float rotateSpeed = 200f;
+    [SerializeField] private float rotateSpeed = 200f * Time.deltaTime;
     [SerializeField] private bool useSmoothRotation = true;
-    [SerializeField] private float smoothRotationSpeed = 5f; // ºÎµå·¯¿î È¸ÀüÀ» À§ÇÑ Ãß°¡ º¯¼ö
+    [SerializeField] private float smoothRotationSpeed = 5f * Time.deltaTime; // ï¿½Îµå·¯ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     private float currentRotationInput = 0f;
 
-    // ¿ÜºÎ(TankInputController)¿¡¼­ È£ÃâµÉ È¸Àü ¸Þ¼­µå
+    // ï¿½Üºï¿½(TankInputController)ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
     public void HandleRotation(float input)
     {
-        // ÀÔ·Â °ªÀ» ÀúÀå (0ÀÌ¾îµµ ÀúÀå)
+        // ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (0ï¿½Ì¾îµµ ï¿½ï¿½ï¿½ï¿½)
         currentRotationInput = input;
     }
 
     private void Update()
     {
-        // ÀÔ·ÂÀÌ ¾øÀ¸¸é È¸ÀüÇÏÁö ¾ÊÀ½
+        // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (currentRotationInput == 0) return;
 
         if (useSmoothRotation)
         {
-            // ºÎµå·¯¿î È¸Àü (Slerp »ç¿ë)
+            // ï¿½Îµå·¯ï¿½ï¿½ È¸ï¿½ï¿½ (Slerp ï¿½ï¿½ï¿½)
             float targetAngle = transform.eulerAngles.z - currentRotationInput * rotateSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
@@ -33,12 +33,12 @@ public class TankTurret : MonoBehaviour
         }
         else
         {
-            // Áï°¢ÀûÀÎ È¸Àü
+            // ï¿½ï°¢ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½
             transform.Rotate(0, 0, -currentRotationInput * rotateSpeed * Time.deltaTime);
         }
     }
 
-    //-----------¹ß»ç ¼¼ÆÃ-----------
+    //-----------ï¿½ß»ï¿½ ï¿½ï¿½ï¿½ï¿½-----------
     [Header("Fire Settings")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;

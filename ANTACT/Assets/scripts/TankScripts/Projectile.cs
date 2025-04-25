@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float speed = 100f;
+    [SerializeField] private float speed = 100f * Time.deltaTime;
     [SerializeField] private float lifeTime = 3f;
     [SerializeField] private float damage = 30f; // 기본 데미지
 

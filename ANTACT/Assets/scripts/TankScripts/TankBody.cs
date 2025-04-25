@@ -3,9 +3,9 @@ using UnityEngine;
 public class TankBody : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float rotateSpeed = 100f;
-    [SerializeField] private float rotationDragFactor = 0.5f; // 회전 시 이동 속도 감소 비율 (0~1)
+    [SerializeField] private float moveSpeed = 5f * Time.deltaTime;
+    [SerializeField] private float rotateSpeed = 100f * Time.deltaTime;
+    [SerializeField] private float rotationDragFactor = 0.5f * Time.deltaTime; // 회전 시 이동 속도 감소 비율 (0~1)
 
     [Header("Components")]
     [SerializeField] private Rigidbody2D rb;
