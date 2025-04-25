@@ -11,8 +11,8 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = transform.up * speed * Time.deltaTime;
-        Destroy(gameObject, lifeTime); 
+        rb.linearVelocity = transform.up * speed;
+        Destroy(gameObject, lifeTime);
     }
 
     // 충돌 시

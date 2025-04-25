@@ -19,13 +19,13 @@ public class TankBody : MonoBehaviour
     public void HandleMovement(Vector2 input)
     {
         // 회전 입력이 있으면 이동 속도 감소 (탱크 스티어링)
-        float speedMultiplier = Mathf.Abs(input.x) > 0.1f ? rotationDragFactor * Time.deltaTime : 1f;
+        float speedMultiplier = Mathf.Abs(input.x) > 0.1f ? rotationDragFactor : 1f;
 
         // 전진/후진 (W/S) - 회전 중일 때는 속도 제한
-        rb.linearVelocity = transform.up * (input.y * moveSpeed * speedMultiplier) * Time.deltaTime;
+        rb.linearVelocity = transform.up * (input.y * moveSpeed * speedMultiplier);
 
         // 좌우 회전 (A/D)
-        rb.angularVelocity = -input.x * rotateSpeed * Time.deltaTime;
+        rb.angularVelocity = -input.x * rotateSpeed;
     }
 
     // 물리 설정 초기화 (필요 시)
