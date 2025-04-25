@@ -3,9 +3,9 @@ using UnityEngine;
 public class TankTurret : MonoBehaviour
 {
     [Header("Rotation Settings")]
-    [SerializeField] private float rotateSpeed = 200f * Time.deltaTime;
+    [SerializeField] private float rotateSpeed = 200f;
     [SerializeField] private bool useSmoothRotation = true;
-    [SerializeField] private float smoothRotationSpeed = 5f * Time.deltaTime; // �ε巯�� ȸ���� ���� �߰� ����
+    [SerializeField] private float smoothRotationSpeed = 5f; // �ε巯�� ȸ���� ���� �߰� ����
 
     private float currentRotationInput = 0f;
 

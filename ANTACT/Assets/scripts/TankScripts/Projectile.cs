@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float speed = 100f * Time.deltaTime;
+    [SerializeField] private float speed = 100f;
     [SerializeField] private float lifeTime = 3f;
     [SerializeField] private float damage = 30f; // 기본 데미지
 
@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = transform.up * speed;
+        rb.linearVelocity = transform.up * speed * Time.deltaTime;
         Destroy(gameObject, lifeTime); 
     }
 
