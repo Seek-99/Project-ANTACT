@@ -8,11 +8,11 @@ public class FieldOfView : MonoBehaviour
     [Range(0, 360)] public float fov = 90f;
     public int rayCount = 90;
     public float viewDistance = 10f;
-    public LayerMask layerMask;
+    public LayerMask layerMask; // 벽 등 장애물 레이어만 포함
 
     [Header("탱크 참조")]
-    public Transform origin; // 탱크의 Transform (보통 Body_() 또는 Tank)
-    public Rigidbody2D tankRb; // 탱크의 Rigidbody2D (회전값용)
+    public Transform origin; // 보통 Body_() 또는 Tank
+    public Rigidbody2D tankRb; // 탱크 회전값 읽기용
 
     [Header("방향 오프셋")]
     [Tooltip("탱크의 앞 방향 기준 보정값. 위(Y+)가 앞이면 90, 오른쪽(X+)이면 0")]
@@ -25,8 +25,6 @@ public class FieldOfView : MonoBehaviour
         mesh = new Mesh();
         mesh.name = "FOV";
         GetComponent<MeshFilter>().mesh = mesh;
-
-     
     }
 
     private void LateUpdate()
@@ -38,6 +36,7 @@ public class FieldOfView : MonoBehaviour
         }
 
         DrawFOV();
+        UpdateEnemyVisibility(); // 💡 시야 내 적만 보이게 처리
     }
 
     private void DrawFOV()
@@ -45,7 +44,7 @@ public class FieldOfView : MonoBehaviour
         float angle = fov * 0.5f;
         float angleIncrease = fov / rayCount;
 
-        Vector3[] vertices = new Vector3[rayCount + 2]; // 0번 중심 + 각도별 점들
+        Vector3[] vertices = new Vector3[rayCount + 2];
         Vector2[] uv = new Vector2[vertices.Length];
         int[] triangles = new int[rayCount * 3];
 
@@ -54,12 +53,11 @@ public class FieldOfView : MonoBehaviour
         int vertexIndex = 1;
         int triangleIndex = 0;
 
-        // 현재 회전값 + 오프셋
         float startingAngle = tankRb.rotation + angleOffset;
 
         for (int i = 0; i <= rayCount; i++)
         {
-            float currentAngle = startingAngle - angle; // 시계방향으로 그리기 위해 -
+            float currentAngle = startingAngle - angle;
             Vector3 dir = GetVectorFromAngle(currentAngle);
 
             Vector3 rayOrigin = origin.position;
@@ -69,7 +67,6 @@ public class FieldOfView : MonoBehaviour
                 ? rayOrigin + dir * viewDistance
                 : hit.point;
 
-            // 꼭짓점 좌표는 로컬 기준으로 변환
             vertices[vertexIndex] = transform.InverseTransformPoint(hitPoint);
 
             if (i > 0)
@@ -95,5 +92,41 @@ public class FieldOfView : MonoBehaviour
     {
         float rad = angle * Mathf.Deg2Rad;
         return new Vector3(Mathf.Cos(rad), Mathf.Sin(rad));
+    }
+
+    // 💡 시야 내 적만 보이게
+    private void UpdateEnemyVisibility()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Vector3 dirToEnemy = (enemy.transform.position - origin.position).normalized;
+            float distanceToEnemy = Vector3.Distance(origin.position, enemy.transform.position);
+
+            if (distanceToEnemy > viewDistance)
+            {
+                enemy.GetComponent<SpriteRenderer>().enabled = false;
+                continue;
+            }
+
+            // ✨ FOV 각도 검사 추가
+            float startingAngle = tankRb.rotation + angleOffset;
+            Vector3 forward = GetVectorFromAngle(startingAngle);
+
+            float angleToEnemy = Vector3.Angle(forward, dirToEnemy);
+
+            if (angleToEnemy > fov * 0.5f)
+            {
+                enemy.GetComponent<SpriteRenderer>().enabled = false;
+                continue;
+            }
+
+            // 장애물 충돌 검사
+            RaycastHit2D hit = Physics2D.Raycast(origin.position, dirToEnemy, distanceToEnemy, layerMask);
+
+            bool isVisible = hit.collider == null || hit.collider.gameObject == enemy;
+            enemy.GetComponent<SpriteRenderer>().enabled = isVisible;
+        }
     }
 }
