@@ -15,12 +15,12 @@ public class MainMenuUI : MonoBehaviour
     public GameObject soundPanel_Dialog;
 
 
-    // 사운드 설정 UI
+    [Header("Audio")]
+    public AudioSource bgmSource;
     public Slider volumeSlider;
     public TMP_Text volumeValueText;
 
     private float currentVolume = 0.5f;
-
 
     //---------------버튼 이벤트------------------------
     // 게임 시작 버튼
@@ -74,14 +74,24 @@ public class MainMenuUI : MonoBehaviour
     {
         optionsPanel_Dialog.SetActive(false);
         soundPanel_Dialog.SetActive(true);
+    }
 
-        // 슬라이더 초기값 적용
+    private void Start()
+    {
+        // 초기 볼륨 설정
         volumeSlider.value = currentVolume;
+        bgmSource.volume = currentVolume;
         UpdateVolumeText(currentVolume);
+
+        // 슬라이더 이벤트 연결
+        volumeSlider.onValueChanged.AddListener(OnSliderValueChanged);
     }
 
     public void OnSliderValueChanged(float value)
     {
+        if (bgmSource != null)
+            bgmSource.volume = value;
+
         UpdateVolumeText(value);
     }
 
