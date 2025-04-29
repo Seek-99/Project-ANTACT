@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: cdc54d285884bc64aa21e3b188deab25
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - seSource: {fileID: 8483357599213580566, guid: c9d2464713e30b94280e4b930edb4faa, type: 3}
+  - moveClip: {fileID: 8300000, guid: 5cf44f10d3e57cd4c8a8883547f7781e, type: 3}
+  - fireClip: {fileID: 8300000, guid: 2dfb9c6c7d2e0e24e958cc24b9f05f96, type: 3}
+  - hitClip: {fileID: 8300000, guid: 1a29eee5130f8e641b95768a55545634, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

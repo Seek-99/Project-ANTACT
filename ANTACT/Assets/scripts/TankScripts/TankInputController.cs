@@ -6,6 +6,8 @@ public class TankInputController : MonoBehaviour
     [Header("Parts Reference")]
     [SerializeField] private TankBody body;
     [SerializeField] private TankTurret turret;
+    [SerializeField] private TankSoundController soundController; // 효과음 동작 연결
+    private Vector2 lastMoveInput = Vector2.zero; // 엔진 효과음 루프
 
     [Header("Input Sensitivity")]
     [SerializeField] private float moveSensitivity = 1f;
@@ -14,7 +16,20 @@ public class TankInputController : MonoBehaviour
     // WASD → 바디 이동
     public void OnMove(InputValue value)
     {
-        body.HandleMovement(value.Get<Vector2>() * moveSensitivity);
+        Vector2 moveInput = value.Get<Vector2>() * moveSensitivity;
+        body.HandleMovement(moveInput);
+
+        // 이동 입력 시 효과음
+        if (moveInput.magnitude > 0.1f && lastMoveInput.magnitude <= 0.1f)
+        {
+            soundController.StartMoveSound(); // 이동 시
+        }
+        else if (moveInput.magnitude <= 0.1f && lastMoveInput.magnitude > 0.1f)
+        {
+            soundController.StopMoveSound(); // 멈춤 시
+        }
+
+        lastMoveInput = moveInput;
     }
 
     // QE → 터렛 회전
