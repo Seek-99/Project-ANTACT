@@ -43,6 +43,7 @@ public class TankTurret : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float fireCooldown = 0.5f;
+    [SerializeField] private TankSoundController soundController; // 효과음 동작 연결
 
     private float lastFireTime = 0f;
 
@@ -52,5 +53,11 @@ public class TankTurret : MonoBehaviour
 
         lastFireTime = Time.time;
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+
+        // 효과음 재생
+        if (soundController != null)
+        {
+            soundController.PlayFireSound();
+        }
     }
 }

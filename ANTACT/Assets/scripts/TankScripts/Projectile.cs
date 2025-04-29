@@ -27,6 +27,13 @@ public class Projectile : MonoBehaviour
             damageable.TakeDamage(damage);
         }
 
+        // 충돌 시 효과음
+        TankSoundController soundController = FindFirstObjectByType<TankSoundController>();
+        if (soundController != null)
+        {
+            soundController.PlayHitSound();
+        }
+
         Destroy(gameObject); // 충돌 시 파괴
     }
 }
