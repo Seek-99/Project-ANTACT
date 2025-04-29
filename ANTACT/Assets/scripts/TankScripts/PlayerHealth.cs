@@ -4,17 +4,17 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [Header("Health Settings")]
-    [Tooltip("ÇÃ·¹ÀÌ¾îÀÇ ÃÖ´ë Ã¼·Â °ª")]
-    public int maxHealth = 100; // ÀÎ½ºÆåÅÍ¿¡¼­ Á¶Àý °¡´É
+    [Tooltip("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½")]
+    public int maxHealth = 100; // ï¿½Î½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     [Header("UI References")]
-    [Tooltip("HP ¹Ù ½½¶óÀÌ´õ ÂüÁ¶")]
+    [Tooltip("HP ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public Slider healthSlider;
 
 
 
-    [Tooltip("ÇöÀç Ã¼·Â (ÀÎ½ºÆåÅÍ¿¡¼­ È®ÀÎ¿ë)")]
-    [SerializeField] private int currentHealth;
+    [Tooltip("ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ (ï¿½Î½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ È®ï¿½Î¿ï¿½)")]
+    [SerializeField] public int currentHealth;
 
 
 
@@ -24,13 +24,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     }
 
     
-    /// Ã¼·Â ½Ã½ºÅÛ ÃÊ±âÈ­
+    /// Ã¼ï¿½ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 
     private void InitializeHealth()
     {
         currentHealth = maxHealth;
 
-        // ½½¶óÀÌ´õ ¼³Á¤
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (healthSlider != null)
         {
             healthSlider.maxValue = maxHealth;
@@ -39,11 +39,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     }
 
-    // µ¥¹ÌÁö ¹Þ´Â ÇÔ¼ö Ãß°¡
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½Ô¼ï¿½ ï¿½ß°ï¿½
     public void TakeDamage(float amount)
     {
         currentHealth -= Mathf.RoundToInt(amount);
-        Debug.Log("ÇÃ·¹ÀÌ¾î ÇÇ°Ý! ³²Àº Ã¼·Â: " + currentHealth);
+        Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ç°ï¿½! ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½: " + currentHealth);
 
         if (healthSlider != null)
         {
@@ -58,7 +58,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        Debug.Log("ÇÃ·¹ÀÌ¾î »ç¸Á!");
+        Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½!");
         Destroy(gameObject);
     }
     public int GetCurrentHealth() => currentHealth;
