@@ -1,29 +1,37 @@
 using UnityEngine;
 
-public class Health_Item : MonoBehaviour
+public class HealthItem : MonoBehaviour
 {
+    public int healAmount = 30; // 회복량
+
     private void OnTriggerEnter2D(Collider2D col)
+{
+    Debug.LogFormat("충돌한 오브젝트: {0}", col.name);
+
+    // 태그로 플레이어만 필터링
+    if (col.CompareTag("player"))
     {
-        if (col.CompareTag("player"))
+        PlayerHealth playerHealth = col.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
         {
-            //PlayerHealth Tank1 = col.GetComponent<PlayerHealth>();
-            PlayerHealth PlayerHealth_Script = col.GetComponent<PlayerHealth>();
-            if (PlayerHealth_Script != null)
-            {
-            PlayerHealth_Script.currentHealth += 30;
-            if (PlayerHealth_Script.currentHealth > PlayerHealth_Script.maxHealth)
-                PlayerHealth_Script.currentHealth = PlayerHealth_Script.maxHealth;
-            Destroy(gameObject);
-            Debug.Log("Destroy");
-            }
-            else
-            {
-                Debug.LogWarning("PlayerHealth 컴포넌트를 찾을 수 없습니다.");
-            }
+            int beforeHealth = playerHealth.currentHealth;
+            Debug.LogFormat("충돌 전 체력: {0}", beforeHealth);
+
+            playerHealth.currentHealth += healAmount;
+
+            if (playerHealth.currentHealth > playerHealth.maxHealth)
+                playerHealth.currentHealth = playerHealth.maxHealth;
+
+            if (playerHealth.healthSlider != null)
+                playerHealth.healthSlider.value = playerHealth.currentHealth;
+
+            Debug.LogFormat("회복 후 체력: {0}", playerHealth.currentHealth);
         }
         else
-            {
-                Debug.LogWarning("Player 태그를 찾을 수 없습니다.");
-            }
+        {
+            Debug.LogWarning("PlayerHealth 컴포넌트를 찾을 수 없습니다.");
+        }
+        Destroy(gameObject);
     }
+}
 }
