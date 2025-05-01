@@ -4,7 +4,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed = 100f;
     [SerializeField] private float lifeTime = 3f;
-    [SerializeField] private float damage = 30f; // 기본 데미지
+    [SerializeField] public float damage = 30f; // 기본 데미지
 
     private Rigidbody2D rb;
 

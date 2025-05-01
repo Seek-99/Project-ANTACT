@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthItem : MonoBehaviour
 {
-    public int healAmount = 30; // 회복량
+    private int healAmount = 30; // 회복량
 
     private void OnTriggerEnter2D(Collider2D col)
 {
@@ -31,7 +31,6 @@ public class HealthItem : MonoBehaviour
         {
             Debug.LogWarning("PlayerHealth 컴포넌트를 찾을 수 없습니다.");
         }
-        Destroy(gameObject);
     }
 }
 }
