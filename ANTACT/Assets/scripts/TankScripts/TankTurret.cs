@@ -24,7 +24,7 @@ public class TankTurret : MonoBehaviour
         if (useSmoothRotation)
         {
             // �ε巯�� ȸ�� (Slerp ���)
-            float targetAngle = transform.eulerAngles.z - currentRotationInput * rotateSpeed * Time.deltaTime;
+            float targetAngle = transform.eulerAngles.z - currentRotationInput * rotateSpeed;
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
                 Quaternion.Euler(0, 0, targetAngle),
