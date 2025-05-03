@@ -19,11 +19,39 @@ public class GameHUDManager : MonoBehaviour
 
     [Header("Option Menu")]
     public GameObject optionMenuContainer;
+    public GameObject popoutContainer;
+
+    [Header("Sound Panel")]
+    public GameObject soundPanel;
+    public AudioSource bgmSource;
+    public AudioSource sfxSource;
+    public Slider bgmSlider;
+    public Slider sfxSlider;
+
+    private float bgmVolume = 0.5f;
+    private float sfxVolume = 0.5f;
 
     private bool isPaused = false;
 
+    void Start()
+    {
+        // 슬라이더 초기화
+        bgmSlider.value = bgmVolume;
+        sfxSlider.value = sfxVolume;
+
+        if (bgmSource != null) bgmSource.volume = bgmVolume;
+        if (sfxSource != null) sfxSource.volume = sfxVolume;
+
+        bgmSlider.onValueChanged.AddListener(OnBGMSliderChanged);
+        sfxSlider.onValueChanged.AddListener(OnSFXSliderChanged);
+
+        optionMenuContainer.SetActive(false);
+        soundPanel.SetActive(false);
+    }
+
     void Update()
     {
+        // 실시간 전차 수 업데이트
         allyCountText.text = $"Allies: {GameObject.FindGameObjectsWithTag("Player").Length}";
         enemyCountText.text = $"Enemies: {GameObject.FindGameObjectsWithTag("Enemy").Length}";
 
@@ -37,18 +65,46 @@ public class GameHUDManager : MonoBehaviour
     {
         isPaused = !isPaused;
         optionMenuContainer.SetActive(isPaused);
+        soundPanel.SetActive(false);
         Time.timeScale = isPaused ? 0f : 1f;
     }
 
-    public void UpdateCaptureGauge(float percent)
+    // 사운드 슬라이더 값 반영
+    public void OnBGMSliderChanged(float value)
     {
-        captureSlider.value = percent;
+        bgmVolume = value;
+        if (bgmSource != null)
+            bgmSource.volume = value;
     }
 
-    public void UpdateRoundResult(int roundIndex, bool win)
+    public void OnSFXSliderChanged(float value)
     {
-        if (roundIndex < 0 || roundIndex >= roundIcons.Length) return;
-        roundIcons[roundIndex].sprite = win ? winSprite : loseSprite;
+        sfxVolume = value;
+        if (sfxSource != null)
+            sfxSource.volume = value;
+    }
+
+    // 버튼 연결 함수
+    public void OnClickSounds()
+    {
+        optionMenuContainer.SetActive(false);
+        popoutContainer.SetActive(true);
+        soundPanel.SetActive(true);
+    }
+
+    public void OnClickBackFromSound()
+    {
+        soundPanel.SetActive(false);
+        popoutContainer.SetActive(false);
+        optionMenuContainer.SetActive(true);
+    }
+
+    public void OnClickResume()
+    {
+        isPaused = false;
+        optionMenuContainer.SetActive(false);
+        soundPanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void OnClickQuitGame()
@@ -59,10 +115,15 @@ public class GameHUDManager : MonoBehaviour
 #endif
     }
 
-    public void OnClickResume()
+    // 점령률/라운드 업데이트 시 사용
+    public void UpdateCaptureGauge(float percent)
     {
-        isPaused = false;
-        optionMenuContainer.SetActive(false);
-        Time.timeScale = 1f;
+        captureSlider.value = percent;
+    }
+
+    public void UpdateRoundResult(int roundIndex, bool win)
+    {
+        if (roundIndex < 0 || roundIndex >= roundIcons.Length) return;
+        roundIcons[roundIndex].sprite = win ? winSprite : loseSprite;
     }
 }
