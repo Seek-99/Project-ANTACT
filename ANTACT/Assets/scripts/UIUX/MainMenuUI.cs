@@ -71,7 +71,7 @@ public class MainMenuUI : MonoBehaviour
     // 시나리오 선택
     public void OnClickScenario1()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Map1Scene");
     }
 
 
