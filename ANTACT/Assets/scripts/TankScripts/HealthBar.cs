@@ -7,24 +7,20 @@ public class HealthBar : MonoBehaviour
     public Image fill;
     public Text healthText;
 
-    private PlayerHealth playerHealth;  // PlayerHealth ÂüÁ¶
-
+    public PlayerHealth playerHealth;
     void Start()
     {
         slider.interactable = false;
 
-        // ºÎ¸ð ¿ÀºêÁ§Æ®¿¡¼­ PlayerHealth Ã£±â
-        playerHealth = GetComponentInParent<PlayerHealth>();
 
         if (playerHealth != null)
         {
-            // ÃÊ±â Ã¼·Â ¼³Á¤
             SetMaxHealth(playerHealth.maxHealth);
             SetHealth(playerHealth.GetCurrentHealth());
         }
         else
         {
-            Debug.LogWarning("PlayerHealth ÄÄÆ÷³ÍÆ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+            Debug.LogWarning("PlayerHealth ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½!");
         }
     }
 
@@ -49,7 +45,7 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    // ¸Å ÇÁ·¹ÀÓ Ã¼·Â ¾÷µ¥ÀÌÆ® 
+    // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® 
     void Update()
     {
         if (playerHealth != null)
