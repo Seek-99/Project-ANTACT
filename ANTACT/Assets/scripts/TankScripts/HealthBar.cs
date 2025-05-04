@@ -8,11 +8,14 @@ public class HealthBar : MonoBehaviour
     public Text healthText;
     public Text apText;
 
+    public Text heText;
+
     public PlayerHealth playerHealth;
     public AmmunityStock ammunityStock;
 
     private int AP; // 👈 추가된 부분
 
+    private int HE;
     void Start()
     {
         slider.interactable = false;
@@ -30,12 +33,15 @@ public class HealthBar : MonoBehaviour
         if (ammunityStock != null)
         {
             SetAP(ammunityStock.GetCurrentAP());
+            SetHE(ammunityStock.GetCurrentHE());
         }
         else
         {
             Debug.LogWarning("AmmunityStock 컴포넌트를 찾을 수 없습니다!");
         }
     }
+
+    
 
     public void SetMaxHealth(int health)
     {
@@ -64,11 +70,25 @@ public class HealthBar : MonoBehaviour
         UpdateAP();
     }
 
+    private void SetHE(int he)
+    {
+        HE = he;
+        UpdateHE();
+    }
+
     private void UpdateAP()
     {
         if (apText != null)
         {
             apText.text = $"{AP}";
+        }
+    }
+
+    private void UpdateHE()
+    {
+        if (heText != null)
+        {
+            heText.text = $"{HE}";
         }
     }
 
@@ -82,6 +102,7 @@ public class HealthBar : MonoBehaviour
         if (ammunityStock != null)
         {
             SetAP(ammunityStock.GetCurrentAP());
+            SetHE(ammunityStock.GetCurrentHE());
         }
     }
 }

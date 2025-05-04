@@ -63,4 +63,5 @@ public class AmmunityStock : MonoBehaviour
         }
     }
     public int GetCurrentAP() => AP;
+    public int GetCurrentHE() => HE;
 }
