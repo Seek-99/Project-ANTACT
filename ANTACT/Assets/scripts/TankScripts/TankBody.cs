@@ -29,10 +29,28 @@ public class TankBody : MonoBehaviour
     }
 
     // 물리 설정 초기화 (필요 시)
-    private void Reset()
+    public void Reset()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         rb.freezeRotation = false;
+    }
+
+    // 현재 속도 반환 (Agent에서 관측용)
+    public Vector2 GetVelocity()
+    {
+        return rb.linearVelocity;
+    }
+
+    // ML-Agent용: 전진/후진 제어
+    public void Move(float moveInput)
+    {
+        rb.linearVelocity = transform.up * moveInput * moveSpeed;
+    }
+
+    // ML-Agent용: 회전 제어
+    public void Turn(float turnInput)
+    {
+        rb.angularVelocity = -turnInput * rotateSpeed;
     }
 }

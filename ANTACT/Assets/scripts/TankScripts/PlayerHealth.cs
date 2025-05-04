@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.MLAgents;
+using Unity.MLAgents.Policies;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
@@ -17,6 +19,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] public int currentHealth;
 
 
+    private int teamIndex;
+    private Agent agent;
 
     void Start()
     {
@@ -58,9 +62,26 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        Debug.Log("�÷��̾� ���!");
-        Destroy(gameObject);
+        // ML-Agents 에이전트 종료
+        var agent = GetComponentInParent<Unity.MLAgents.Agent>();
+        Debug.Log($"{agent.name} 사망");
+        // 팀별 탱크 사망 처리
+
+        if (agent != null)
+        {
+            // Behavior Parameters에서 팀 정보 가져오기
+            teamIndex = agent.GetComponent<BehaviorParameters>().TeamId;
+        }
+        else
+        {
+            Debug.LogError("Agent 컴포넌트를 찾을 수 없습니다.");
+        }
+
+        GameEndManager.TankDied(teamIndex);
+
+        gameObject.SetActive(false); // 탱크 사망 처리
     }
+
     public int GetCurrentHealth() => currentHealth;
 
 }

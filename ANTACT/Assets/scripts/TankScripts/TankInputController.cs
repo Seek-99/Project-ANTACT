@@ -6,66 +6,66 @@ public class TankInputController : MonoBehaviour
     [Header("Parts Reference")]
     [SerializeField] private TankBody body;
     [SerializeField] private TankTurret turret;
-    [SerializeField] private TankSoundController soundController; // È¿°úÀ½ µ¿ÀÛ ¿¬°á
-    private Vector2 lastMoveInput = Vector2.zero; // ¿£Áø È¿°úÀ½ ·çÇÁ
+    [SerializeField] private TankSoundController soundController; // íš¨ê³¼ìŒ ë™ì‘ ì—°ê²°
+    private Vector2 lastMoveInput = Vector2.zero; // ì—”ì§„ íš¨ê³¼ìŒ ë£¨í”„
 
     [Header("Input Sensitivity")]
     [SerializeField] private float moveSensitivity = 1f;
     [SerializeField] private float turretSensitivity = 1f;
 
-    // WASD ¡æ ¹Ùµğ ÀÌµ¿
+    // WASD â†’ ë°”ë”” ì´ë™
     public void OnMove(InputValue value)
     {
         Vector2 moveInput = value.Get<Vector2>() * moveSensitivity;
         body.HandleMovement(moveInput);
 
-        // ÀÌµ¿ ÀÔ·Â ½Ã È¿°úÀ½
+        // ì´ë™ ì…ë ¥ ì‹œ íš¨ê³¼ìŒ
         if (moveInput.magnitude > 0.1f && lastMoveInput.magnitude <= 0.1f)
         {
-            soundController.StartMoveSound(); // ÀÌµ¿ ½Ã
+            soundController.StartMoveSound(); // ì´ë™ ì‹œ
         }
         else if (moveInput.magnitude <= 0.1f && lastMoveInput.magnitude > 0.1f)
         {
-            soundController.StopMoveSound(); // ¸ØÃã ½Ã
+            soundController.StopMoveSound(); // ë©ˆì¶¤ ì‹œ
         }
 
         lastMoveInput = moveInput;
     }
 
-    // QE ¡æ ÅÍ·¿ È¸Àü
+    // QE â†’ í„°ë › íšŒì „
     public void OnRotateTurret(InputValue value)
     {
         turret.HandleRotation(value.Get<float>() * turretSensitivity);
     }
 
-    // ¹ß»ç ÀÔ·Â ÇÔ¼ö Ãß°¡
+    // ë°œì‚¬ ì…ë ¥ í•¨ìˆ˜ ì¶”ê°€
     public void OnFire(InputValue value)
     {
         if (value.isPressed)
         {
-            turret.Fire();
+            turret.Fire(GetComponent<TankAgent>());
         }
     }
 
 
-    // À¯´ÏÆ¼ ¿¡µğÅÍ¿¡¼­ ÀÚµ¿ ¿¬°á
+    // ìœ ë‹ˆí‹° ì—ë””í„°ì—ì„œ ìë™ ì—°ê²°
     private void Reset()
     {
         body = GetComponentInChildren<TankBody>();
         turret = GetComponentInChildren<TankTurret>();
     }
-    // TankInputController.cs¿¡ ÀÓ½Ã·Î Ãß°¡
+    // TankInputController.csì— ì„ì‹œë¡œ ì¶”ê°€
     void Update()
     {
         if (Keyboard.current.qKey.isPressed || Keyboard.current.eKey.isPressed)
         {
-            Debug.Log("QE Å° ÀÔ·Â °¨Áö Áß");
+            Debug.Log("QE í‚¤ ì…ë ¥ ê°ì§€ ì¤‘");
         }
 
-        // Fire ¾×¼Ç Å° ¸ÅÇÎ
+        // Fire ì•¡ì…˜ í‚¤ ë§¤í•‘
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            turret.Fire();
+            turret.Fire(GetComponent<TankAgent>());
         }
     }
 }

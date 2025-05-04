@@ -1,4 +1,5 @@
 using UnityEngine;
+using Unity.MLAgents;
 
 public class TankTurret : MonoBehaviour
 {
@@ -42,12 +43,19 @@ public class TankTurret : MonoBehaviour
 
     private float lastFireTime = 0f;
 
-    public void Fire()
+    public void Fire(Agent agentowner)
     {
         if (Time.time - lastFireTime < fireCooldown) return;
 
         lastFireTime = Time.time;
-        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        // 발사체 생성 및 owner 설정
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Projectile proj = projectile.GetComponent<Projectile>();
+        if (proj != null)
+        {
+            proj.owner = agentowner;
+        }
+
 
         // 효과음 재생
         if (soundController != null)
