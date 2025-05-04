@@ -13,9 +13,9 @@ public class DarkenMapCreator : MonoBehaviour
         Destroy(darkenObj.GetComponent<Collider>());
 
         darkenObj.transform.parent = mainCamera.transform;
-        darkenObj.transform.localPosition = new Vector3(0, 0, 10); // Ä«¸Þ¶ó ¾Õ
+        darkenObj.transform.localPosition = new Vector3(0, 0, 10); // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½
         darkenObj.transform.localRotation = Quaternion.identity;
-        darkenObj.transform.localScale = new Vector3(100, 100, 1); // ¸Êº¸´Ù Å©°Ô
+        darkenObj.transform.localScale = new Vector3(350, 350, 1); // ï¿½Êºï¿½ï¿½ï¿½ Å©ï¿½ï¿½
 
         MeshRenderer renderer = darkenObj.GetComponent<MeshRenderer>();
         renderer.material = darkenMaterial;

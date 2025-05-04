@@ -35,7 +35,7 @@ public class GameHUDManager : MonoBehaviour
 
     void Start()
     {
-        // ½½¶óÀÌ´õ ÃÊ±âÈ­
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½Ê±ï¿½È­
         bgmSlider.value = bgmVolume;
         sfxSlider.value = sfxVolume;
 
@@ -51,9 +51,9 @@ public class GameHUDManager : MonoBehaviour
 
     void Update()
     {
-        // ½Ç½Ã°£ ÀüÂ÷ ¼ö ¾÷µ¥ÀÌÆ®
+        // ï¿½Ç½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         allyCountText.text = $"Allies: {GameObject.FindGameObjectsWithTag("Player").Length}";
-        enemyCountText.text = $"Enemies: {GameObject.FindGameObjectsWithTag("Enemy").Length}";
+        enemyCountText.text = $"Enemies: {GameObject.FindGameObjectsWithTag("Enemy").Length/2}";
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -69,7 +69,7 @@ public class GameHUDManager : MonoBehaviour
         Time.timeScale = isPaused ? 0f : 1f;
     }
 
-    // »ç¿îµå ½½¶óÀÌ´õ °ª ¹Ý¿µ
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ ï¿½Ý¿ï¿½
     public void OnBGMSliderChanged(float value)
     {
         bgmVolume = value;
@@ -84,7 +84,7 @@ public class GameHUDManager : MonoBehaviour
             sfxSource.volume = value;
     }
 
-    // ¹öÆ° ¿¬°á ÇÔ¼ö
+    // ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
     public void OnClickSounds()
     {
         optionMenuContainer.SetActive(false);
@@ -115,7 +115,7 @@ public class GameHUDManager : MonoBehaviour
 #endif
     }
 
-    // Á¡·É·ü/¶ó¿îµå ¾÷µ¥ÀÌÆ® ½Ã »ç¿ë
+    // ï¿½ï¿½ï¿½É·ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ ï¿½ï¿½ï¿½
     public void UpdateCaptureGauge(float percent)
     {
         captureSlider.value = percent;
