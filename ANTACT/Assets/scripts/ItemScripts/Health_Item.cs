@@ -6,7 +6,6 @@ public class HealthItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
 {
-    Debug.LogFormat("충돌한 오브젝트: {0}", col.name);
 
     // 태그로 플레이어만 필터링
     if (col.CompareTag("player"))
@@ -26,10 +25,6 @@ public class HealthItem : MonoBehaviour
                 playerHealth.healthSlider.value = playerHealth.currentHealth;
 
             Debug.LogFormat("회복 후 체력: {0}", playerHealth.currentHealth);
-        }
-        else
-        {
-            Debug.LogWarning("PlayerHealth 컴포넌트를 찾을 수 없습니다.");
         }
     }
 }
