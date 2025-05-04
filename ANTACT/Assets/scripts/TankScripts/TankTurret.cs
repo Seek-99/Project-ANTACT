@@ -9,21 +9,17 @@ public class TankTurret : MonoBehaviour
 
     private float currentRotationInput = 0f;
 
-    // �ܺ�(TankInputController)���� ȣ��� ȸ�� �޼���
     public void HandleRotation(float input)
     {
-        // �Է� ���� ���� (0�̾ ����)
         currentRotationInput = input;
     }
 
     private void Update()
     {
-        // �Է��� ������ ȸ������ ����
         if (currentRotationInput == 0) return;
 
         if (useSmoothRotation)
         {
-            // �ε巯�� ȸ�� (Slerp ���)
             float targetAngle = transform.eulerAngles.z - currentRotationInput * rotateSpeed;
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
@@ -33,13 +29,12 @@ public class TankTurret : MonoBehaviour
         }
         else
         {
-            // �ﰢ���� ȸ��
             transform.Rotate(0, 0, -currentRotationInput * rotateSpeed * Time.deltaTime);
         }
     }
 
-    //-----------�߻� ����-----------
     [Header("Fire Settings")]
+
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float fireCooldown = 0.5f;
