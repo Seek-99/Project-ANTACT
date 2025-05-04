@@ -5,7 +5,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [Header("Health Settings")]
     [Tooltip("�÷��̾��� �ִ� ü�� ��")]
-    public int maxHealth = 100; // �ν����Ϳ��� ���� ����
+    public int maxHealth = 100; 
 
     [Header("UI References")]
     [Tooltip("HP �� �����̴� ����")]

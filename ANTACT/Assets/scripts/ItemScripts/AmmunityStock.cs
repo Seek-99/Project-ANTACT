@@ -3,37 +3,37 @@ using UnityEngine.InputSystem;
 
 public class AmmunityStock : MonoBehaviour
 {
-    [Header("Ammunition Count")] //publicÀ» »ç¿ëÇÏÁö ¾Ê°í ÂüÁ¶°¡ °¡´ÉÇÏ°Ô ÇØ¾ßÇÒÁöµµ -> º¸±ÞÂ÷·®¿¡¼­ ÂüÁ¶ÇØ¾ß ÇÏ´Â º¯¼öÀÓ.
-    [SerializeField] public int AP = 10; //Ã¶°©Åº °³¼ö
-    [SerializeField] public int HE = 10; //°íÆøÅº °³¼ö
+    [Header("Ammunition Count")] //publicï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ø¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+    [SerializeField] public int AP = 10; //Ã¶ï¿½ï¿½Åº ï¿½ï¿½ï¿½ï¿½
+    [SerializeField] public int HE = 10; //ï¿½ï¿½ï¿½ï¿½Åº ï¿½ï¿½ï¿½ï¿½
 
     [Header("Current Ammo")]
-    [SerializeField] private string status = "ap"; //ÇöÀç ÀåÀüµÈ ÅºÀÇ Á¾·ù
+    [SerializeField] private string status = "ap"; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Åºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     [Header("Fire Cooldown")]
-    [SerializeField] private float fireCooldown = 0.5f; //ÀçÀåÀü ½Ã°£
+    [SerializeField] private float fireCooldown = 0.5f; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
-    private float lastFireTime = 0f; //¸¶Âù°¡Áö ÀçÀåÀü½Ã°£ °ü·Ã º¯¼ö(TankTurret.csÂü°í)
+    private float lastFireTime = 0f; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(TankTurret.csï¿½ï¿½ï¿½ï¿½)
 
     [Header("Ammo MinMax")]
-    [SerializeField] public int APmax = 20; //ÃÖ´ë º¸À¯ °¡´ÉÇÑ Æ÷Åº·® if(AP < MAX) ÀÌ·± ´À³¦À¸·Î »ç¿ëÇÒ ¿¹Á¤. ¸¶Âù°¡Áö·Î public ÇØ°áÇÒ ¼ö ÀÖÀ¸¸é ÇØ°áÇÏÀÚ.
+    [SerializeField] public int APmax = 20; //ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Åºï¿½ï¿½ if(AP < MAX) ï¿½Ì·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ public ï¿½Ø°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø°ï¿½ï¿½ï¿½ï¿½ï¿½.
     [SerializeField] public int HEmax = 10;
 
     [Header("Damage Multiplier")]
-    [SerializeField] private int Multiple = 1; //µ¥¹ÌÁö ¹èÀ² ¼³Á¤±â´É
+    [SerializeField] private int Multiple = 1; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     
-    GameObject obj; //¿©±âºÎÅÍ ½ºÅ¸Æ®ºÎºÐ±îÁö ³ªÁß¿¡ ½Ï °¥¾Æ¾þ¾î¾ß ÇÒ µí -> publicÀ» »ç¿ëÇÏ¸é ÀüÂ÷°¡ ´Ù¼ö Ãß°¡µÇ¾úÀ» ¶§ ÇÊ¿¬ÀûÀ¸·Î critical error ¹ß»ýÇÒ°ÍÀÓ.
+    GameObject obj; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸Æ®ï¿½ÎºÐ±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¾ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ -> publicï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¼ï¿½ ï¿½ß°ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ critical error ï¿½ß»ï¿½ï¿½Ò°ï¿½ï¿½ï¿½.
     private void Start()
     {
         obj = GameObject.Find("Projectile");
-        obj.GetComponent<Projectile>().damage = Multiple * 30f; //ÇÁ·ÎÁ§Æ¿ ½ºÅ©¸³Æ®¿¡¼­ ÇöÀç publicÀÎ µ¥¹ÌÁö °¡Á®¿Í¼­ µ¥¹ÌÁö ¹èÀ² °öÇÏ±â
+        obj.GetComponent<Projectile>().damage = Multiple * 30f; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¿ ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ publicï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
     }
-    //¿©±â±îÁö °¥¾Æ¾þ¾î¾ß ÇÔ. ·ÎÁ÷¸¸ Âü°íÇÒ°Í.
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¾ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò°ï¿½.
 
 
     void Update()
     {
-        //1Å° = ap, 2Å° = he »óÅÂ·Î ÁöÁ¤
+        //1Å° = ap, 2Å° = he ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (Keyboard.current.digit1Key.wasPressedThisFrame || Keyboard.current.numpad1Key.wasPressedThisFrame)
         {
             status = "ap";
@@ -43,10 +43,10 @@ public class AmmunityStock : MonoBehaviour
             status = "he";
         }
 
-        // ½ºÆäÀÌ½º ¹Ù ´­·¶À» ½Ã 'ÇöÀç ÀåÀüÁßÀÎ Æ÷Åº'ÀÌ -1 µÇ°Ô ¸¸µå´Â ÄÚµå
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 'ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Åº'ï¿½ï¿½ -1 ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            if (Time.time - lastFireTime >= fireCooldown) //ÀçÀåÀü½Ã°£ Àü¿¡ ½ºÆäÀÌ½º ´­·¶À» ¶§ÀÇ --¹æÁö
+            if (Time.time - lastFireTime >= fireCooldown) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ --ï¿½ï¿½ï¿½ï¿½
             {
                 if (status == "ap" && AP > 0)
                 {
@@ -62,4 +62,5 @@ public class AmmunityStock : MonoBehaviour
             else return;
         }
     }
+    public int GetCurrentAP() => AP;
 }

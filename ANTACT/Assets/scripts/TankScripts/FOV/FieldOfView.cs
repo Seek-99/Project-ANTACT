@@ -8,11 +8,11 @@ public class FieldOfView : MonoBehaviour
     [Range(0, 360)] public float fov = 90f;
     public int rayCount = 90;
     public float viewDistance = 10f;
-    public LayerMask layerMask; // 벽 등 장애물 레이어만 포함
+    public LayerMask layerMask;
 
     [Header("탱크 참조")]
-    public Transform origin; // 보통 Body_() 또는 Tank
-    public Rigidbody2D tankRb; // 탱크 회전값 읽기용
+    public Transform origin; // 위치 기준
+    public Transform rotationSource; // 🎯 회전값을 참조할 오브젝트 (예: 바디)
 
     [Header("방향 오프셋")]
     [Tooltip("탱크의 앞 방향 기준 보정값. 위(Y+)가 앞이면 90, 오른쪽(X+)이면 0")]
@@ -29,14 +29,13 @@ public class FieldOfView : MonoBehaviour
 
     private void LateUpdate()
     {
-        // 탱크 위치 따라가기
         if (origin != null)
         {
             transform.position = origin.position;
         }
 
         DrawFOV();
-        UpdateEnemyVisibility(); // 💡 시야 내 적만 보이게 처리
+        UpdateEnemyVisibility();
     }
 
     private void DrawFOV()
@@ -53,7 +52,7 @@ public class FieldOfView : MonoBehaviour
         int vertexIndex = 1;
         int triangleIndex = 0;
 
-        float startingAngle = tankRb.rotation + angleOffset;
+        float startingAngle = GetRotationZ() + angleOffset;
 
         for (int i = 0; i <= rayCount; i++)
         {
@@ -87,14 +86,6 @@ public class FieldOfView : MonoBehaviour
         mesh.triangles = triangles;
     }
 
-    // 각도(도) → 방향 벡터
-    private Vector3 GetVectorFromAngle(float angle)
-    {
-        float rad = angle * Mathf.Deg2Rad;
-        return new Vector3(Mathf.Cos(rad), Mathf.Sin(rad));
-    }
-
-    // 💡 시야 내 적만 보이게
     private void UpdateEnemyVisibility()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -110,8 +101,7 @@ public class FieldOfView : MonoBehaviour
                 continue;
             }
 
-            // ✨ FOV 각도 검사 추가
-            float startingAngle = tankRb.rotation + angleOffset;
+            float startingAngle = GetRotationZ() + angleOffset;
             Vector3 forward = GetVectorFromAngle(startingAngle);
 
             float angleToEnemy = Vector3.Angle(forward, dirToEnemy);
@@ -122,11 +112,21 @@ public class FieldOfView : MonoBehaviour
                 continue;
             }
 
-            // 장애물 충돌 검사
             RaycastHit2D hit = Physics2D.Raycast(origin.position, dirToEnemy, distanceToEnemy, layerMask);
 
             bool isVisible = hit.collider == null || hit.collider.gameObject == enemy;
             enemy.GetComponent<SpriteRenderer>().enabled = isVisible;
         }
+    }
+
+    private float GetRotationZ()
+    {
+        return rotationSource != null ? rotationSource.eulerAngles.z : 0f;
+    }
+
+    private Vector3 GetVectorFromAngle(float angle)
+    {
+        float rad = angle * Mathf.Deg2Rad;
+        return new Vector3(Mathf.Cos(rad), Mathf.Sin(rad));
     }
 }
