@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
 
     public HealthStock healthStock;
 
-    private int AP; // 👈 추가된 부분
+    private int AP; 
 
     private int HE;
 

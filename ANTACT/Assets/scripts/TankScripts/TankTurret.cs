@@ -42,25 +42,63 @@ public class TankTurret : MonoBehaviour
     [SerializeField] private TankSoundController soundController; // 효과음 동작 연결
 
     private float lastFireTime = 0f;
+    [Header("Ammo Reference")]
+    public AmmunityStock ammunityStock;
+
 
     public void Fire(Agent agentowner)
     {
-        if (Time.time - lastFireTime < fireCooldown) return;
+        Debug.Log("🔫 Fire() 호출됨");
 
-        lastFireTime = Time.time;
-        // 발사체 생성 및 owner 설정
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Projectile proj = projectile.GetComponent<Projectile>();
-        if (proj != null)
+        string currentStatus = ammunityStock.status;
+
+        if (currentStatus == "ap" && ammunityStock.AP > 0)
         {
-            proj.owner = agentowner;
+            if (Time.time - lastFireTime < fireCooldown) return;
+
+            lastFireTime = Time.time;
+            // 발사체 생성 및 owner 설정
+            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            Projectile proj = projectile.GetComponent<Projectile>();
+            if (proj != null)
+            {
+                proj.owner = agentowner;
+            }
+
+
+            // 효과음 재생
+            if (soundController != null)
+            {
+                soundController.PlayFireSound();
+            }
+        }
+        else if (currentStatus == "he" && ammunityStock.HE > 0)
+        {
+            if (Time.time - lastFireTime < fireCooldown) return;
+
+            lastFireTime = Time.time;
+            // 발사체 생성 및 owner 설정
+            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            Projectile proj = projectile.GetComponent<Projectile>();
+            if (proj != null)
+            {
+                proj.owner = agentowner;
+            }
+
+
+            // 효과음 재생
+            if (soundController != null)
+            {
+                soundController.PlayFireSound();
+            }
+        }
+        else
+        {
+            return;
         }
 
 
-        // 효과음 재생
-        if (soundController != null)
-        {
-            soundController.PlayFireSound();
-        }
     }
+
+    
 }

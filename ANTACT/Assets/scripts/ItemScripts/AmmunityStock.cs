@@ -8,7 +8,7 @@ public class AmmunityStock : MonoBehaviour
     [SerializeField] public int HE = 10; //고폭탄 개수
 
     [Header("Current Ammo")]
-    [SerializeField] private string status = "ap"; //현재 장전된 탄의 종류
+    [SerializeField] public string status = "ap"; //현재 장전된 탄의 종류
 
     [Header("Fire Cooldown")]
     [SerializeField] private float fireCooldown = 0.5f; //재장전 시간
