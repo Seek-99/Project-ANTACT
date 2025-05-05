@@ -15,6 +15,8 @@ public class TankAgent : Agent
 
     public float viewAngle = 150f;
     public float viewDistance = 60f;
+    [SerializeField] private float fireCooldown = 2f; // 쿨다운 시간 (초)
+    private float lastFireTime = -Mathf.Infinity;
 
     public LayerMask enemyLayer;
     public LayerMask obstacleLayer;
@@ -70,11 +72,12 @@ public class TankAgent : Agent
         // 초기화
         Debug.Log("에피소드 시작");
         tankBody.Reset();
+        isDestroyed = false;
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        if (isPlayerControlled) return;
+        if (isPlayerControlled | isDestroyed) return;
         // 자신의 전차 방향, 속도
         sensor.AddObservation(transform.up);
         sensor.AddObservation(tankBody.GetVelocity());
@@ -137,8 +140,7 @@ public class TankAgent : Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         // 파괴되지 않은 경우에만 행동을 처리
-        if (isDestroyed) return;
-        if (isPlayerControlled) return;
+        if (isPlayerControlled | isDestroyed) return;
 
         Debug.Log($"name: {gameObject.name}, move: {actions.ContinuousActions[0]}, turn: {actions.ContinuousActions[1]}, shoot: {actions.ContinuousActions[2]}, turretTurn: {actions.ContinuousActions[3]}");
         float move = Mathf.Clamp(actions.ContinuousActions[0], -0.5f, 1.5f);
@@ -161,6 +163,12 @@ public class TankAgent : Agent
 
     private void TryShoot()
     {
+        if (Time.time < lastFireTime + fireCooldown)
+        {
+            Debug.Log($"{gameObject.name}: 사격 실패 - 쿨다운 중");
+            return;
+        }
+
         if (currentTarget == null)
         {
             Debug.Log($"{gameObject.name}: 사격 실패 - 타겟 없음");
@@ -174,6 +182,7 @@ public class TankAgent : Agent
             GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             Projectile projScript = proj.GetComponent<Projectile>();
             projScript.owner = this; // 누가 발사했는지 지정
+            lastFireTime = Time.time;
             Debug.Log($"{gameObject.name}: 사격 성공 - 타겟 {currentTarget.name}");
         }
     }
