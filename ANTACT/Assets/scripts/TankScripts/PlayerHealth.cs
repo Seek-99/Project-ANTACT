@@ -63,7 +63,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private void Die()
     {
         // ML-Agents 에이전트 종료
-        var agent = GetComponentInParent<Unity.MLAgents.Agent>();
+        var agent = GetComponentInParent<TankAgent>();
+        agent.isDestroyed = true; // 에이전트 사망 처리
         Debug.Log($"{agent.name} 사망");
         // 팀별 탱크 사망 처리
 
