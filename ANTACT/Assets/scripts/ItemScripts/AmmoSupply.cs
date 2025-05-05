@@ -3,14 +3,14 @@ using UnityEngine;
 public class AmmoSupply : MonoBehaviour
 {
     [Header("Ammunition Supply")]
-    [SerializeField] private int APsup = 10; //º¸ÃæÇÒ Ã¶°©Åº °³¼ö
-    [SerializeField] private int HEsup = 10; //º¸ÃæÇÒ °íÆøÅº °³¼ö
+    [SerializeField] private int APsup = 10; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¶ï¿½ï¿½Åº ï¿½ï¿½ï¿½ï¿½
+    [SerializeField] private int HEsup = 10; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Åº ï¿½ï¿½ï¿½ï¿½
     private void OnTriggerEnter2D(Collider2D collision)
     {
         AmmunityStock Ammo = collision.GetComponent<AmmunityStock>();
         if (Ammo != null)
         {
-            if (Ammo.AP + APsup < Ammo.APmax) //Ã¶°©Åº º¸±Þ ¸ÞÄ¿´ÏÁò
+            if (Ammo.AP + APsup < Ammo.APmax) //Ã¶ï¿½ï¿½Åº ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½
             {
                 Ammo.AP += APsup;
             }
@@ -19,7 +19,7 @@ public class AmmoSupply : MonoBehaviour
                 Ammo.AP = Ammo.APmax;
             }
 
-            if (Ammo.HE + HEsup < Ammo.HEmax) //°íÆøÅº º¸±Þ ¸ÞÄ¿´ÏÁò
+            if (Ammo.HE + HEsup < Ammo.HEmax) //ï¿½ï¿½ï¿½ï¿½Åº ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½
             {
                 Ammo.HE += HEsup;
             }
@@ -30,7 +30,7 @@ public class AmmoSupply : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("AmmunityStock ÄÄÆ÷³ÍÆ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("AmmunityStock ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
     }
 }
