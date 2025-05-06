@@ -99,14 +99,14 @@ public class TankAgent : Agent
                 foundEnemy = true;
                 currentTarget = enemy.gameObject;
 
-                // 거리가 가까울수록 보상 (거리 60 이상: 0점, 20 이하: 1점)
-                float proximityReward = Mathf.Clamp01(Mathf.Pow((60f - dist) / 40f, 2));
-                AddReward(proximityReward * 0.005f); // 거리 기반 보상
+                // 거리가 가까울수록 보상 (거리 100 이상: 0점, 20 이하: 1점)
+                float proximityReward = Mathf.Clamp01(Mathf.Pow((100f - dist) / 80f, 2));
+                AddReward(proximityReward * 0.05f); // 거리 기반 보상
 
                 // 포탑이 적을 바라보는 방향에 가까울수록 보상 추가
                 float turretAngle = Vector2.Angle(turretTransform.up, toEnemy); // 포탑이 적을 향하는 각도
                 float turretAimReward = Mathf.Clamp01(1f - Mathf.Pow(turretAngle / 180f, 2)); // 각도가 작을수록 보상 증가
-                AddReward(turretAimReward * 0.005f); // 포탑 방향에 대한 보상
+                AddReward(turretAimReward * 0.05f); // 포탑 방향에 대한 보상
 
                 Debug.Log($"{gameObject.name}: 적 발견 - {enemy.transform.parent}, 거리: {dist:F2}, 각도: {angle:F1}°, 포탑 각도: {turretAngle:F1}°, 보상: {turretAimReward * 0.05f}");
 
@@ -124,7 +124,7 @@ public class TankAgent : Agent
             sensor.AddObservation(0f);           // 거리
             currentTarget = null;
         }
-        //가장 가까운 엄폐물 방향
+        /*가장 가까운 엄폐물 방향
         Collider2D cover = Physics2D.OverlapCircle(transform.position, viewDistance, coverLayer);
         if (cover && CanSeeTarget(cover.gameObject))
         {
@@ -134,7 +134,7 @@ public class TankAgent : Agent
         else
         {
             sensor.AddObservation(Vector2.zero);
-        }
+        }*/
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -207,7 +207,7 @@ public class TankAgent : Agent
         Vector2 dirToTarget = (target.transform.position - transform.position).normalized;
 
         // 시야각 확인
-        float angle = Vector2.Angle(transform.up, dirToTarget);
+        float angle = Vector2.Angle(turretTransform.up, dirToTarget);
         if (angle < viewAngle / 2f) // 시야각 범위 내일 경우에만 처리
         {
             // Raycast가 목표를 정확히 감지하도록 설정
