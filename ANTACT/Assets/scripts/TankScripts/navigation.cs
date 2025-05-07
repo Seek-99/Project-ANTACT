@@ -1,71 +1,64 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class navigation : MonoBehaviour
 {
     [SerializeField]
-    Transform target; // ¸ñÇ¥ Transform
+    Transform target; // ëª©í‘œ Transform
     [SerializeField]
-    Transform HQ; // ¸ñÇ¥ Transform2
-    private int previousdestination = 0;
+    Transform HQ; // ì†Œí™˜ ìœ„ì¹˜
     public float diversionDistance = 10f;
     [SerializeField]
-    NavMeshAgent navMeshAgent; // NavMeshAgent ÄÄÆ÷³ÍÆ®
+    NavMeshAgent navMeshAgent; // NavMeshAgent ì»´í¬ë„ŒíŠ¸
+    public GameObject supplyVehiclePrefab;
+
+    private bool isDestroyed = false;
 
     void Start()
     {
-        // NavMeshAgent ÄÄÆ÷³ÍÆ® ÃÊ±âÈ­
+        // NavMeshAgent ì»´í¬ë„ŒíŠ¸ ì´ˆê¸°í™”
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        // NavMeshAgentÀÇ È¸Àü °ü·Ã ¼³Á¤ 2d È¯°æÀÌ¶ó zÃàÀ» ¾ø¾Ö´Â ÄÚµå
+        // NavMeshAgentì˜ íšŒì „ ê´€ë ¨ ì„¤ì • 2d í™˜ê²½ì´ë¼ zì¶•ì„ ì—†ì• ëŠ” ì½”ë“œ
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
     }
 
+
     void Update()
     {
-        //ÀüÂ÷¿Í º¸±ŞÂ÷·® »çÀÌÀÇ °Å¸®
-        
-
-        // NavMeshAgent·Î ¸ñÀûÁö ¼³Á¤
-        if (previousdestination == 0)
+        // NavMeshAgentë¡œ ëª©ì ì§€ ì„¤ì •
+        float distanceToTank = Vector2.Distance(transform.position, target.position);
+        GameObject player = GameObject.FindGameObjectWithTag("player");
+        if (player != null)
         {
-            float distanceToTank = Vector2.Distance(transform.position, target.position);
-            GameObject player = GameObject.FindGameObjectWithTag("player");
-            if (player != null)
-            {
-                target = player.transform;
-                navMeshAgent.SetDestination(target.position);
-            }
-            if (distanceToTank <= diversionDistance)
-            {
-                previousdestination = 1;
-            }
-            ;
+            target = player.transform;
+            navMeshAgent.SetDestination(target.position);
         }
-        else if (previousdestination == 1)
-        {
-            float distanceToTank = Vector2.Distance(transform.position, HQ.position);
-            navMeshAgent.SetDestination(HQ.position);
-            if (distanceToTank <= diversionDistance)
-            {
-                previousdestination = 0;
-            }
-        }
-        // ÀÌµ¿ ¹æÇâÀ» ¹Ù¶óº¸°Ô ÇÏ±â
+        // ì´ë™ ë°©í–¥ì„ ë°”ë¼ë³´ê²Œ í•˜ê¸°
         LookAtMovementDirection();
     }
 
     void LookAtMovementDirection()
     {
-        // NavMeshAgentÀÇ ¼Óµµ¸¦ ±âÁØÀ¸·Î ¹æÇâ °è»ê
+        // NavMeshAgentì˜ ì†ë„ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ë°©í–¥ ê³„ì‚°
         Vector3 velocity = navMeshAgent.velocity;
 
-        // ¼Óµµ°¡ ÀÖÀ» ¶§¸¸ È¸Àü Ã³¸®
-        if (velocity.sqrMagnitude > 0.01f) // ¼Óµµ°¡ °ÅÀÇ 0ÀÌ ¾Æ´Ï¸é
+        // ì†ë„ê°€ ìˆì„ ë•Œë§Œ íšŒì „ ì²˜ë¦¬
+        if (velocity.sqrMagnitude > 0.01f) // ì†ë„ê°€ ê±°ì˜ 0ì´ ì•„ë‹ˆë©´
         {
             float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle-90);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("ì¶©ëŒ ê°ì§€ë¨: " + other.gameObject.name); // ì¶©ëŒ ê°ì§€ í™•ì¸
+        if (other.CompareTag("Player")) // í”Œë ˆì´ì–´ ì „ì°¨ì™€ ì¶©ëŒ ì‹œ ì‚­ì œ & HQì—ì„œ ìƒˆ ì°¨ëŸ‰ ì†Œí™˜
+        {
+            Debug.Log("í”Œë ˆì´ì–´ ì „ì°¨ì™€ ì¶©ëŒ! ì°¨ëŸ‰ ì‚­ì œ ì§„í–‰");     
+            Destroy(gameObject);
         }
     }
 }
