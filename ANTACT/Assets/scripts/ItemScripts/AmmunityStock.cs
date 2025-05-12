@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 public class AmmunityStock : MonoBehaviour
 {
     [Header("Ammunition Count")]
-    [SerializeField] public int AP = 10; //철갑탄 개수
-    [SerializeField] public int HE = 10; //고폭탄 개수
+    [SerializeField] public float AP = 10f; //철갑탄 개수
+    [SerializeField] public float HE = 10f; //고폭탄 개수
 
     [Header("Current Ammo")]
     [SerializeField] public string status = "ap"; //현재 장전된 탄의 종류
@@ -16,11 +16,11 @@ public class AmmunityStock : MonoBehaviour
     private float lastFireTime = 0f; //마찬가지 재장전시간 관련 변수(TankTurret.cs참고)
 
     [Header("Ammo MinMax")]
-    [SerializeField] public int APmax = 20; //최대 보유 가능한 포탄량
-    [SerializeField] public int HEmax = 10;
+    [SerializeField] public float APmax = 20f; //최대 보유 가능한 포탄량
+    [SerializeField] public float HEmax = 10f;
 
     [Header("Damage Multiplier")]
-    [SerializeField] private int Multiple = 1; //데미지 배율
+    [SerializeField] private float Multiple = 1f; //데미지 배율
 
     GameObject obj;
     private void Start()
@@ -61,6 +61,6 @@ public class AmmunityStock : MonoBehaviour
             else return;
         }
     }
-    public int GetCurrentAP() => AP;
-    public int GetCurrentHE() => HE;
+    public float GetCurrentAP() => AP;
+    public float GetCurrentHE() => HE;
 }

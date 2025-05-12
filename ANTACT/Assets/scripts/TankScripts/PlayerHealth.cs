@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [Header("Health Settings")]
     [Tooltip("�÷��̾��� �ִ� ü�� ��")]
-    public int maxHealth = 100; 
+    public float maxHealth = 100f; 
 
     [Header("UI References")]
     [Tooltip("HP �� �����̴� ����")]
@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
 
     [Tooltip("���� ü�� (�ν����Ϳ��� Ȯ�ο�)")]
-    [SerializeField] public int currentHealth;
+    [SerializeField] public float currentHealth;
 
 
     private int teamIndex;
@@ -83,6 +83,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         gameObject.SetActive(false); // 탱크 사망 처리
     }
 
-    public int GetCurrentHealth() => currentHealth;
+    public float GetCurrentHealth() => currentHealth;
 
 }

@@ -17,11 +17,11 @@ public class HealthBar : MonoBehaviour
 
     public HealthStock healthStock;
 
-    private int AP; 
+    private float AP; 
 
-    private int HE;
+    private float HE;
 
-    private int HealthItemValue;
+    private float HealthItemValue;
 
     void Start()
     {
@@ -58,14 +58,14 @@ public class HealthBar : MonoBehaviour
 
     
 
-    public void SetMaxHealth(int health)
+    public void SetMaxHealth(float health)
     {
         slider.maxValue = health;
         slider.value = health;
         UpdateHealthText();
     }
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         slider.value = health;
         UpdateHealthText();
@@ -79,19 +79,19 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    private void SetAP(int ap)
+    private void SetAP(float ap)
     {
         AP = ap;
         UpdateAP();
     }
 
-    private void SetHE(int he)
+    private void SetHE(float he)
     {
         HE = he;
         UpdateHE();
     }
     
-    private void SetHealthValue(int heatlhvalue)
+    private void SetHealthValue(float heatlhvalue)
     {
         HealthItemValue = heatlhvalue;
         UpdateHealthItemValue();
