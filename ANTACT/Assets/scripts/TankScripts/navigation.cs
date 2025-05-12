@@ -5,13 +5,9 @@ using System.Collections;
 public class navigation : MonoBehaviour
 {
     [SerializeField]
-    Transform target; // 목표 Transform
-    [SerializeField]
-    Transform HQ; // 소환 위치
-    public float diversionDistance = 10f;
+    Transform target;
     [SerializeField]
     NavMeshAgent navMeshAgent; // NavMeshAgent 컴포넌트
-    public GameObject supplyVehiclePrefab;
 
     private bool isDestroyed = false;
 
@@ -28,8 +24,6 @@ public class navigation : MonoBehaviour
 
     void Update()
     {
-        // NavMeshAgent로 목적지 설정
-        float distanceToTank = Vector2.Distance(transform.position, target.position);
         GameObject player = GameObject.FindGameObjectWithTag("player");
         if (player != null)
         {
