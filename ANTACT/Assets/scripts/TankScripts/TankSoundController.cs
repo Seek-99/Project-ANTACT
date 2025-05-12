@@ -10,6 +10,18 @@ public class TankSoundController : MonoBehaviour
 
     private bool isPlayingMoveSound = false;
 
+    private void Start()
+    {
+        // 거리 기반 효과 적용: 2D → 3D
+        if (seSource != null)
+        {
+            seSource.spatialBlend = 1f; 
+            seSource.minDistance = 5f;  
+            seSource.maxDistance = 60f; 
+            seSource.rolloffMode = AudioRolloffMode.Logarithmic; 
+        }
+    }
+
     public void StartMoveSound()
     {
         if (!isPlayingMoveSound && moveClip != null)
