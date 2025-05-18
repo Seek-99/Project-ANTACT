@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
@@ -12,7 +12,6 @@ public class FieldOfView : MonoBehaviour
 
     [Header("탱크 참조")]
     public Transform origin; // 위치 기준
-    public Transform rotationSource; // 🎯 회전값을 참조할 오브젝트 (예: 바디)
 
     [Header("방향 오프셋")]
     [Tooltip("탱크의 앞 방향 기준 보정값. 위(Y+)가 앞이면 90, 오른쪽(X+)이면 0")]
@@ -113,15 +112,18 @@ public class FieldOfView : MonoBehaviour
             }
 
             RaycastHit2D hit = Physics2D.Raycast(origin.position, dirToEnemy, distanceToEnemy, layerMask);
-
             bool isVisible = hit.collider == null || hit.collider.gameObject == enemy;
+
             enemy.GetComponent<SpriteRenderer>().enabled = isVisible;
         }
     }
 
     private float GetRotationZ()
     {
-        return rotationSource != null ? rotationSource.eulerAngles.z : 0f;
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = (mouseWorldPosition - origin.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        return angle;
     }
 
     private Vector3 GetVectorFromAngle(float angle)
