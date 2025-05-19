@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [Tooltip("���� ü�� (�ν����Ϳ��� Ȯ�ο�)")]
     [SerializeField] public float currentHealth;
 
+    public GameObject DiedTank; // 생성할 프리팹
 
     private int teamIndex;
     private Agent agent;
@@ -79,6 +80,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
 
         GameEndManager.TankDied(teamIndex);
+        if (DiedTank != null)
+        {
+            Instantiate(DiedTank, transform.position, transform.rotation);
+        }
+
 
         gameObject.SetActive(false); // 탱크 사망 처리
     }
