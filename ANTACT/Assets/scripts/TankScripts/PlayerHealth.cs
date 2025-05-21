@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [Tooltip("���� ü�� (�ν����Ϳ��� Ȯ�ο�)")]
     [SerializeField] public float currentHealth;
 
-    public GameObject DiedTank; // 생성할 프리팹
+    public GameObject DiedTank; // 죽은 후 탱크 시체? 프리팹
 
     private int teamIndex;
     private Agent agent;

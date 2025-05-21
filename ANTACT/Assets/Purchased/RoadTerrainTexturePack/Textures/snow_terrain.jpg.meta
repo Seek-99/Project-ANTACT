@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      snow_terrain_0: -1049738783934544663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
