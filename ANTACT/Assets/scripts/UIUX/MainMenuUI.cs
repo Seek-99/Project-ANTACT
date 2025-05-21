@@ -5,15 +5,20 @@ using TMPro;
 
 public class MainMenuUI : MonoBehaviour
 {
-    // ¿¸√º ƒ¡≈◊¿Ã≥ 
+    [Header("Container")]
     public GameObject mainMenuContainer;
     public GameObject popoutDialogContainer;
 
-    // ∞≥∫∞ ∆–≥Œ
+    [Header("Panels")]
     public GameObject gameStartPanel_Dialog;
     public GameObject optionsPanel_Dialog;
     public GameObject soundPanel_Dialog;
 
+    [Header("Scenario Panels")]
+    public GameObject scenario1Panel_Dialog;
+    public GameObject scenario2Panel_Dialog;
+    public GameObject scenario3Panel_Dialog;
+    public GameObject scenario4Panel_Dialog;
 
     [Header("BGM Audio")]
     public AudioSource bgmSource;
@@ -28,28 +33,35 @@ public class MainMenuUI : MonoBehaviour
     private float bgmVolume = 0.5f;
     private float sfxVolume = 0.5f;
 
-    //---------------πˆ∆∞ ¿Ã∫•∆Æ------------------------
-    // ∞‘¿” Ω√¿€ πˆ∆∞
+    //---------------Î≤ÑÌäº Ïù¥Î≤§Ìä∏------------------------
+    // Í≤åÏûÑ ÏãúÏûë Î≤ÑÌäº
     public void OnClickGameStart()
     {
         mainMenuContainer.SetActive(false);
         popoutDialogContainer.SetActive(true);
+
         gameStartPanel_Dialog.SetActive(true);
         optionsPanel_Dialog.SetActive(false);
         soundPanel_Dialog.SetActive(false);
+
+        scenario1Panel_Dialog.SetActive(false);
+        scenario2Panel_Dialog.SetActive(false);
+        scenario3Panel_Dialog.SetActive(false);
+        scenario4Panel_Dialog.SetActive(false);
     }
 
-    // ø…º« πˆ∆∞
+    // ÏòµÏÖò Î≤ÑÌäº
     public void OnClickOptions()
     {
         mainMenuContainer.SetActive(false);
         popoutDialogContainer.SetActive(true);
+
         gameStartPanel_Dialog.SetActive(false);
         optionsPanel_Dialog.SetActive(true);
         soundPanel_Dialog.SetActive(false);
     }
 
-    // ¡æ∑· πˆ∆∞
+    // Ï¢ÖÎ£å Î≤ÑÌäº
     public void OnClickExit()
     {
         Application.Quit();
@@ -58,30 +70,60 @@ public class MainMenuUI : MonoBehaviour
 #endif
     }
 
-    // Dialog µ⁄∑Œ∞°±‚ πˆ∆∞
+    // Dialog Îí§Î°úÍ∞ÄÍ∏∞ Î≤ÑÌäº
     public void OnClickBackToMain()
     {
         gameStartPanel_Dialog.SetActive(false);
         optionsPanel_Dialog.SetActive(false);
         soundPanel_Dialog.SetActive(false);
+
+        scenario1Panel_Dialog.SetActive(false);
+        scenario2Panel_Dialog.SetActive(false);
+        scenario3Panel_Dialog.SetActive(false);
+        scenario4Panel_Dialog.SetActive(false);
+
         popoutDialogContainer.SetActive(false);
         mainMenuContainer.SetActive(true);
     }
 
-    // Ω√≥™∏Æø¿ º±≈√
-    public void OnClickScenario1()
+    // ÏãúÎÇòÎ¶¨Ïò§ ÏÑ†ÌÉù
+    public void OnClickTestMap()
     {
         SceneManager.LoadScene("Map1Scene");
     }
 
+    public void OnClickScenario(int index)
+    {
+        gameStartPanel_Dialog.SetActive(false);
 
-    // -------------ªÁøÓµÂ ∆–≥Œ--------------------
+        scenario1Panel_Dialog.SetActive(index == 1);
+        scenario2Panel_Dialog.SetActive(index == 2);
+        scenario3Panel_Dialog.SetActive(index == 3);
+        scenario4Panel_Dialog.SetActive(index == 4);
+    }
+
+    public void OnClickScenarioMap(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void OnClickBackToGameStart()
+    {
+        scenario1Panel_Dialog.SetActive(false);
+        scenario2Panel_Dialog.SetActive(false);
+        scenario3Panel_Dialog.SetActive(false);
+        scenario4Panel_Dialog.SetActive(false);
+
+        gameStartPanel_Dialog.SetActive(true);
+    }
+
+    // -------------ÏÇ¨Ïö¥Îìú Ìå®ÎÑê--------------------
     public void OnClickSoundSettings()
     {
         optionsPanel_Dialog.SetActive(false);
         soundPanel_Dialog.SetActive(true);
 
-        // ΩΩ∂Û¿Ã¥ı √ ±‚∞™ π›øµ
+        // Ïä¨ÎùºÏù¥Îçî Ï¥àÍ∏∞Í∞í Î∞òÏòÅ
         volumeSlider.value = bgmSource.volume;
         UpdateVolumeText(bgmSource.volume);
 
@@ -91,7 +133,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
-        // √ ±‚ ∫º∑˝ º≥¡§
+        // Ï¥àÍ∏∞ Î≥ºÎ•® ÏÑ§Ï†ï
         volumeSlider.value = bgmVolume;
         sfxVolumeSlider.value = sfxVolume;
 
@@ -114,7 +156,7 @@ public class MainMenuUI : MonoBehaviour
         UpdateVolumeText(value);
     }
 
-    public void OnSFXSliderValueChanged(float value) // √ﬂ∞°
+    public void OnSFXSliderValueChanged(float value) // Ï∂îÍ∞Ä
     {
         sfxVolume = value;
         if (sfxSource != null)
@@ -128,7 +170,7 @@ public class MainMenuUI : MonoBehaviour
         volumeValueText.text = Mathf.RoundToInt(value * 100) + "%";
     }
 
-    private void UpdateSFXVolumeText(float value) // √ﬂ∞°
+    private void UpdateSFXVolumeText(float value) // Ï∂îÍ∞Ä
     {
         sfxVolumeValueText.text = Mathf.RoundToInt(value * 100) + "%";
     }
@@ -138,7 +180,7 @@ public class MainMenuUI : MonoBehaviour
         bgmSource.volume = volumeSlider.value;
         sfxSource.volume = sfxVolumeSlider.value;
 
-        Debug.Log($"[ªÁøÓµÂ ¿˚øÎ] BGM: {bgmSource.volume}, SFX: {sfxSource.volume}");
+        Debug.Log($"[ÏÇ¨Ïö¥Îìú Ï†ÅÏö©] BGM: {bgmSource.volume}, SFX: {sfxSource.volume}");
     }
 
     public void OnClickBackFromSound()

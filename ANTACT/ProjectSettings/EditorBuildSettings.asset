@@ -14,5 +14,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map1Scene.unity
     guid: 7186ade67f3a3b04f9a375ea7d9a1ea2
+  - enabled: 1
+    path: Assets/Scenes/Scenario1Map1.unity
+    guid: 28dead08aadecf043a69c4433638f64e
+  - enabled: 1
+    path: Assets/Scenes/Scenario1Map2.unity
+    guid: 1c85e88d7f6913240bffe3e27f719e80
+  - enabled: 1
+    path: Assets/Scenes/Scenario1Map3.unity
+    guid: 7b1a8430f8dfd934eb95883ae1819e07
+  - enabled: 1
+    path: Assets/Scenes/Scenario2Map1.unity
+    guid: a9c10e69ba5e1204f94dabf0ecd179ec
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
