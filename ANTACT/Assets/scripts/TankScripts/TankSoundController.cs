@@ -8,6 +8,13 @@ public class TankSoundController : MonoBehaviour
     public AudioClip fireClip;
     public AudioClip hitClip;
 
+    [Range(0f, 1f)]
+    public float moveVolume = 1.0f;
+    [Range(0f, 1f)]
+    public float fireVolume = 1.0f;
+    [Range(0f, 1f)]
+    public float hitVolume = 1.0f;
+
     private bool isPlayingMoveSound = false;
 
     private void Start()
@@ -27,6 +34,7 @@ public class TankSoundController : MonoBehaviour
         if (!isPlayingMoveSound && moveClip != null)
         {
             seSource.clip = moveClip;
+            seSource.volume = moveVolume;
             seSource.loop = true;
             seSource.Play();
             isPlayingMoveSound = true;
@@ -47,12 +55,18 @@ public class TankSoundController : MonoBehaviour
     public void PlayFireSound()
     {
         if (fireClip != null && seSource != null)
+        {
             seSource.PlayOneShot(fireClip);
+            seSource.volume = fireVolume;
+        }
     }
 
     public void PlayHitSound()
     {
         if (hitClip != null && seSource != null)
+        {
             seSource.PlayOneShot(hitClip);
+            seSource.volume = hitVolume;
+        }
     }
 }
