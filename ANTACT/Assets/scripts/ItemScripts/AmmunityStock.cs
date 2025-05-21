@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class AmmunityStock : MonoBehaviour
 {
     [Header("Ammunition Count")]
