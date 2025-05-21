@@ -63,7 +63,7 @@ private void OnCollisionEnter2D(Collision2D collision)
     TankSoundController soundController = FindFirstObjectByType<TankSoundController>();
     if (soundController != null)
     {
-        soundController.PlayHitSound();
+        //soundController.PlayHitSound();
     }
 
     Destroy(gameObject); // 충돌 시 파괴
