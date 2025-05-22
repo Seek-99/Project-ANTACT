@@ -8,6 +8,8 @@ public class GameEndManager : MonoBehaviour
     public GameObject winUI;
     public GameObject loseUI;
 
+    public VictoryCircle victorycircle;
+
     private bool isGameEnded = false;
     private static int[] aliveTankCount = { 3, 3 }; // 팀 0과 팀 1의 살아있는 탱크 수
 
@@ -31,6 +33,20 @@ public class GameEndManager : MonoBehaviour
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
         Debug.Log($" Enemy 수: {enemies.Length}, Player 수: {players.Length}");
+
+        if (victorycircle != null)
+        {
+            if (victorycircle.VictoryPoint >= 100f)
+            {
+                Debug.Log("점령 승리 조건 달성!");
+                ShowWinUI();
+            }
+            else if (victorycircle.VictoryPoint <= -100f)
+            {
+                Debug.Log("점령 패배 조건 달성!");
+                ShowLoseUI();
+            }
+        }
 
         if (enemies.Length == 0 && players.Length > 0)
         {

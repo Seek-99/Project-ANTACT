@@ -20,8 +20,7 @@ public class VictoryCircle : MonoBehaviour
             int enemyCount = 0;
 
             // **현재 오브젝트의 실제 크기를 기준으로 반지름 계산**
-            // 오브젝트의 로컬 스케일이 아니라, 월드 기준 스케일을 사용 (lossyScale)
-            float radius = transform.lossyScale.x / 2f;
+            float radius = GetComponent<SpriteRenderer>().bounds.extents.x;
 
             // "Player" 오브젝트 찾기
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
