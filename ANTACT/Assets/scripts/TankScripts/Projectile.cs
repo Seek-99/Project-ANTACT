@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float lifeTime = 3f;
     [SerializeField] public float damage = 30f; // 기본 데미지
 
+    public GameObject explosionEffectPrefab; // 피격 이펙트
+
     private Rigidbody2D rb;
     public Agent owner; // 발사한 에이전트
 
@@ -59,11 +61,13 @@ private void OnCollisionEnter2D(Collision2D collision)
         }
     }
 
-    // 충돌 시 효과음
-    TankSoundController soundController = FindFirstObjectByType<TankSoundController>();
-    if (soundController != null)
+    if (explosionEffectPrefab != null)
     {
-        //soundController.PlayHitSound();
+        Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
+    }
+    else
+    {
+        Debug.LogWarning("폭발 이펙트 프리팹이 설정되지 않았습니다.");
     }
 
     Destroy(gameObject); // 충돌 시 파괴
