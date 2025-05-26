@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2609032041809706947}
   - component: {fileID: 5133376226031535833}
   - component: {fileID: 6779364143808023587}
+  - component: {fileID: -9222545029710075467}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -178,4 +179,18 @@ MonoBehaviour:
   speed: 150
   lifeTime: 3
   damage: 30
+  explosionEffectPrefab: {fileID: 6044226169856721068, guid: a88485c63aaa4b8499b55432e22e5ac9, type: 3}
   owner: {fileID: 0}
+--- !u!114 &-9222545029710075467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3085477772398715119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c432ce168b64b6c46afe98b942cc0fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 6044226169856721068, guid: a88485c63aaa4b8499b55432e22e5ac9, type: 3}
