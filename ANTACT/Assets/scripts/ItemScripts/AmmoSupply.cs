@@ -3,8 +3,8 @@ using UnityEngine;
 public class AmmoSupply : MonoBehaviour
 {
     [Header("Ammunition Supply")]
-    [SerializeField] private int APsup = 10; //������ ö��ź ����
-    [SerializeField] private int HEsup = 10; //������ ����ź ����
+    [SerializeField] private float APsup = 10f; //������ ö��ź ����
+    [SerializeField] private float HEsup = 1f; //������ ����ź ����
     private void OnTriggerEnter2D(Collider2D collision)
     {
         AmmunityStock Ammo = collision.GetComponent<AmmunityStock>();

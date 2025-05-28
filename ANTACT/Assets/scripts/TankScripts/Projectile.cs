@@ -12,6 +12,8 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rb;
     public Agent owner; // 발사한 에이전트
 
+    public string Ammunitystatus;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,19 +36,29 @@ private void OnCollisionEnter2D(Collision2D collision)
 
     // 피격 대상에게 데미지 부여
     var damageable = collision.gameObject.GetComponent<IDamageable>();
+    GameObject AmmoStatus;
+    AmmoStatus = GameObject.Find("body_0");
+    Ammunitystatus = AmmoStatus.GetComponent<AmmunityStock>().status;
     if (damageable != null)
-    {
-        damageable.TakeDamage(damage);
-        if (collision.gameObject.GetComponentInParent<TankAgent>() != null)
         {
-            collision.gameObject.GetComponentInParent<TankAgent>().AddReward(-2f); // 피격 시 페널티
-            Debug.Log($"{collision.gameObject.transform.parent}: 피격! - 발사자: {owner}, Reward: -2");
+            if (Ammunitystatus == "he")
+            {
+                damageable.TakeDamage(damage*1.5f);
+            }
+            else
+            {
+                damageable.TakeDamage(damage);
+            }
+            if (collision.gameObject.GetComponentInParent<TankAgent>() != null)
+            {
+                collision.gameObject.GetComponentInParent<TankAgent>().AddReward(-2f); // 피격 시 페널티
+                Debug.Log($"{collision.gameObject.transform.parent}: 피격! - 발사자: {owner}, Reward: -2");
+            }
+            else
+            {
+                Debug.Log("충돌한 객체에 TankAgent가 없습니다.");
+            }
         }
-        else
-        {
-            Debug.Log("충돌한 객체에 TankAgent가 없습니다.");
-        }
-    }
 
     // 보상/페널티 처리
     if (owner != null)

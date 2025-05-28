@@ -127,6 +127,7 @@ MonoBehaviour:
   maxHealth: 100
   healthSlider: {fileID: 0}
   currentHealth: 100
+  DiedTank: {fileID: 0}
 --- !u!50 &3521034001881760591
 Rigidbody2D:
   serializedVersion: 5
@@ -225,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   APsup: 10
-  HEsup: 10
+  HEsup: 1
 --- !u!195 &5472848793145343846
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -261,7 +262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  diversionDistance: 5
   navMeshAgent: {fileID: 0}
 --- !u!114 &8237626999538818153
 MonoBehaviour:
@@ -278,3 +278,4 @@ MonoBehaviour:
   maxHealth: 100
   healthSlider: {fileID: 0}
   currentHealth: 100
+  DiedTank: {fileID: 0}

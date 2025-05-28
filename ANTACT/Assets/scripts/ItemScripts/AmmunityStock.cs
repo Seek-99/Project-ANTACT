@@ -6,7 +6,7 @@ public class AmmunityStock : MonoBehaviour
 {
     [Header("Ammunition Count")]
     [SerializeField] public float AP = 10f; //철갑탄 개수
-    [SerializeField] public float HE = 10f; //고폭탄 개수
+    [SerializeField] public float HE = 1f; //고폭탄 개수
 
     [Header("Current Ammo")]
     [SerializeField] public string status = "ap"; //현재 장전된 탄의 종류
@@ -18,17 +18,17 @@ public class AmmunityStock : MonoBehaviour
 
     [Header("Ammo MinMax")]
     [SerializeField] public float APmax = 20f; //최대 보유 가능한 포탄량
-    [SerializeField] public float HEmax = 10f;
+    [SerializeField] public float HEmax = 2f;
 
-    [Header("Damage Multiplier")]
-    [SerializeField] private float Multiple = 1f; //데미지 배율
+    //[Header("Damage Multiplier")]
+    //[SerializeField] private float Multiple = 1.0f; //데미지 배율
 
-    GameObject obj;
-    private void Start()
-    {
-        obj = GameObject.Find("Projectile");
-        obj.GetComponent<Projectile>().damage = Multiple * 30f; //프로젝틸 스크립트에서 현재 public인 데미지 가져와서 데미지 배율 곱하기
-    }
+    //GameObject obj;
+    //private void Start()
+    //{
+    //    obj = GameObject.Find("Projectile");
+    //    obj.GetComponent<Projectile>().damage = Multiple * 30f; //프로젝틸 스크립트에서 현재 public인 데미지 가져와서 데미지 배율 곱하기
+    //}
 
 
     void Update()
