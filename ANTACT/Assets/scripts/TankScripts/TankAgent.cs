@@ -182,6 +182,7 @@ public class TankAgent : Agent
             GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             Projectile projScript = proj.GetComponent<Projectile>();
             projScript.owner = this; // 누가 발사했는지 지정
+            projScript.ammuStock = tankBody.ammunityStock;
             lastFireTime = Time.time;
             Debug.Log($"{gameObject.name}: 사격 성공 - 타겟 {currentTarget.name}");
         }

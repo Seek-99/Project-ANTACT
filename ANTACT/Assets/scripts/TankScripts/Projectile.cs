@@ -5,14 +5,14 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed = 100f;
     [SerializeField] private float lifeTime = 3f;
-    [SerializeField] public float damage = 30f; // 기본 데미지
+    [SerializeField] public float damage = 30f;
 
-    public GameObject explosionEffectPrefab; // 피격 이펙트
+    public GameObject explosionEffectPrefab;
 
     private Rigidbody2D rb;
-    public Agent owner; // 발사한 에이전트
 
-    public string Ammunitystatus;
+    public Agent owner;                  // 발사한 전차 (TankAgent)
+    public AmmunityStock ammuStock;      // 발사자 전차의 정확한 탄약 정보
 
     void Start()
     {
@@ -21,37 +21,43 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    // 충돌 시
-private void OnCollisionEnter2D(Collision2D collision)
-{
-    Debug.Log($"충돌한 객체: {collision.gameObject.name}, 태그: {collision.gameObject.tag}, 부모: {collision.gameObject.transform.parent}");
-
-    // 🔒 건물 태그와 충돌하면 아무 처리도 하지 않고 바로 리턴
-    if (collision.gameObject.CompareTag("Object"))
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("건물이므로 충돌 무시됨");
-        Destroy(gameObject); // 총알은 여전히 제거
-        return;
-    }
+        Debug.Log($"충돌한 객체: {collision.gameObject.name}, 태그: {collision.gameObject.tag}, 부모: {collision.gameObject.transform.parent}");
 
-    // 피격 대상에게 데미지 부여
-    var damageable = collision.gameObject.GetComponent<IDamageable>();
-    GameObject AmmoStatus;
-    AmmoStatus = GameObject.Find("body_0");
-    Ammunitystatus = AmmoStatus.GetComponent<AmmunityStock>().status;
-    if (damageable != null)
+        if (collision.gameObject.CompareTag("Object"))
         {
-            if (Ammunitystatus == "he")
+            Debug.Log("건물이므로 충돌 무시됨");
+            Destroy(gameObject);
+            return;
+        }
+
+        var damageable = collision.gameObject.GetComponent<IDamageable>();
+
+        // AmmunityStock에서 정확한 정보 가져오기
+        float multiple = 1.0f;
+        string ammoStatus = "ap";
+
+        if (ammuStock != null)
+        {
+            multiple = ammuStock.Multiple;
+            ammoStatus = ammuStock.status;
+        }
+        else
+        {
+            Debug.LogWarning("Projectile에 AmmunityStock이 연결되지 않았습니다.");
+        }
+
+        // 데미지 계산 및 적용
+        if (damageable != null)
+        {
+            float finalDamage = (ammoStatus == "he") ? damage * multiple * 1.5f : damage * multiple;
+            damageable.TakeDamage(finalDamage);
+
+            var hitAgent = collision.gameObject.GetComponentInParent<TankAgent>();
+            if (hitAgent != null)
             {
-                damageable.TakeDamage(damage*1.5f);
-            }
-            else
-            {
-                damageable.TakeDamage(damage);
-            }
-            if (collision.gameObject.GetComponentInParent<TankAgent>() != null)
-            {
-                collision.gameObject.GetComponentInParent<TankAgent>().AddReward(-2f); // 피격 시 페널티
+                hitAgent.AddReward(-2f);
                 Debug.Log($"{collision.gameObject.transform.parent}: 피격! - 발사자: {owner}, Reward: -2");
             }
             else
@@ -60,29 +66,30 @@ private void OnCollisionEnter2D(Collision2D collision)
             }
         }
 
-    // 보상/페널티 처리
-    if (owner != null)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
+        // 명중 보상
+        if (owner != null)
         {
-            owner.AddReward(+2f);
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                owner.AddReward(+2f);
+            }
+            else if (collision.gameObject.CompareTag("Player"))
+            {
+                owner.AddReward(-3f);
+            }
         }
-        else if (collision.gameObject.CompareTag("Player"))
+
+        if (explosionEffectPrefab != null)
         {
-            owner.AddReward(-3f);
+            Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
         }
-    }
+        else
+        {
+            Debug.LogWarning("폭발 이펙트 프리팹이 설정되지 않았습니다.");
+        }
 
-    if (explosionEffectPrefab != null)
-    {
-        Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
-    else
-    {
-        Debug.LogWarning("폭발 이펙트 프리팹이 설정되지 않았습니다.");
-    }
-
-    Destroy(gameObject); // 충돌 시 파괴
 }
 
-}
+

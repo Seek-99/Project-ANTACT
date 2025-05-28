@@ -83,6 +83,7 @@ public class TankTurret : MonoBehaviour
             if (proj != null)
             {
                 proj.owner = agentowner;
+                proj.ammuStock = ammunityStock;
             }
 
 

@@ -10,9 +10,20 @@ public class TankBody : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Rigidbody2D rb;
 
+    public AmmunityStock ammunityStock;
+
     void Start()
     {
         if (rb == null) rb = GetComponent<Rigidbody2D>();
+
+        if (ammunityStock == null)
+        {
+            ammunityStock = GetComponent<AmmunityStock>();
+            if (ammunityStock == null)
+            {
+                Debug.LogWarning($"{gameObject.name}: AmmunityStock을 찾을 수 없습니다.");
+            }
+        }
     }
 
     // 외부(TankInputController)에서 호출될 이동 메서드

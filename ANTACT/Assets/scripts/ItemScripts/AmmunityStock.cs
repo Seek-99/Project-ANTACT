@@ -21,7 +21,7 @@ public class AmmunityStock : MonoBehaviour
     [SerializeField] public float HEmax = 2f;
 
     [Header("Damage Multiplier")]
-    [SerializeField] private float Multiple = 1.0f; //데미지 배율
+    [SerializeField] public float Multiple = 1.0f; //데미지 배율
 
     //GameObject obj;
     //private void Start()
