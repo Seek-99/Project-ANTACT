@@ -20,8 +20,8 @@ public class AmmunityStock : MonoBehaviour
     [SerializeField] public float APmax = 20f; //최대 보유 가능한 포탄량
     [SerializeField] public float HEmax = 2f;
 
-    //[Header("Damage Multiplier")]
-    //[SerializeField] private float Multiple = 1.0f; //데미지 배율
+    [Header("Damage Multiplier")]
+    [SerializeField] private float Multiple = 1.0f; //데미지 배율
 
     //GameObject obj;
     //private void Start()
