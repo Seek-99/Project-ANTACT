@@ -13,6 +13,7 @@ public class MainMenuUI : MonoBehaviour
     public GameObject gameStartPanel_Dialog;
     public GameObject optionsPanel_Dialog;
     public GameObject soundPanel_Dialog;
+    public GameObject manualPanel_Dialog;
 
     [Header("Scenario Panels")]
     public GameObject scenario1Panel_Dialog;
@@ -43,6 +44,7 @@ public class MainMenuUI : MonoBehaviour
         gameStartPanel_Dialog.SetActive(true);
         optionsPanel_Dialog.SetActive(false);
         soundPanel_Dialog.SetActive(false);
+        manualPanel_Dialog.SetActive(false);
 
         scenario1Panel_Dialog.SetActive(false);
         scenario2Panel_Dialog.SetActive(false);
@@ -59,6 +61,7 @@ public class MainMenuUI : MonoBehaviour
         gameStartPanel_Dialog.SetActive(false);
         optionsPanel_Dialog.SetActive(true);
         soundPanel_Dialog.SetActive(false);
+        manualPanel_Dialog.SetActive(false);
     }
 
     // 종료 버튼
@@ -76,6 +79,7 @@ public class MainMenuUI : MonoBehaviour
         gameStartPanel_Dialog.SetActive(false);
         optionsPanel_Dialog.SetActive(false);
         soundPanel_Dialog.SetActive(false);
+        manualPanel_Dialog.SetActive(false);
 
         scenario1Panel_Dialog.SetActive(false);
         scenario2Panel_Dialog.SetActive(false);
@@ -115,6 +119,18 @@ public class MainMenuUI : MonoBehaviour
         scenario4Panel_Dialog.SetActive(false);
 
         gameStartPanel_Dialog.SetActive(true);
+    }
+
+    public void OnClickControlManual() 
+    {
+        optionsPanel_Dialog.SetActive(false);
+        manualPanel_Dialog.SetActive(true);
+    }
+
+    public void OnClickBackFromControlManual() 
+    {
+        manualPanel_Dialog.SetActive(false);
+        optionsPanel_Dialog.SetActive(true);
     }
 
     // -------------사운드 패널--------------------
