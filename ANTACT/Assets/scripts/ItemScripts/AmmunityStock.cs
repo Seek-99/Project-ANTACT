@@ -23,16 +23,14 @@ public class AmmunityStock : MonoBehaviour
     [Header("Damage Multiplier")]
     [SerializeField] public float Multiple = 1.0f; //데미지 배율
 
-    //GameObject obj;
-    //private void Start()
-    //{
-    //    obj = GameObject.Find("Projectile");
-    //    obj.GetComponent<Projectile>().damage = Multiple * 30f; //프로젝틸 스크립트에서 현재 public인 데미지 가져와서 데미지 배율 곱하기
-    //}
-
+    [Header("isContrllable")]
+    [SerializeField] public bool isControllablePlayer = false; //플레이어 전차인지의 여부
 
     void Update()
     {
+        //isControllablePlayer값이 ture일 경우에만 실행할 것이다
+        if (!isControllablePlayer) return;
+
         //1키 = ap, 2키 = he 상태로 지정
         if (Keyboard.current.digit1Key.wasPressedThisFrame || Keyboard.current.numpad1Key.wasPressedThisFrame)
         {

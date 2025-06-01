@@ -45,6 +45,13 @@ public class ChangeTank : MonoBehaviour
         tank.GetComponent<BehaviorParameters>().enabled = true;
         tank.GetComponent<TankAgent>().enabled = true;
 
+        var ammo = tank.GetComponentInChildren<AmmunityStock>();
+        if (ammo != null)
+        {
+            ammo.isControllablePlayer = false;
+            ammo.status = "ap";
+        }
+
         Transform fov = tank.transform.Find("FieldOfView");
         if (fov != null)
             fov.gameObject.SetActive(false);
@@ -56,6 +63,13 @@ public class ChangeTank : MonoBehaviour
         tank.GetComponent<PlayerInput>().enabled = true;
         tank.GetComponent<BehaviorParameters>().enabled = false;
         tank.GetComponent<TankAgent>().enabled = false;
+
+        var ammo = tank.GetComponentInChildren<AmmunityStock>();
+        if (ammo != null)
+        {
+            ammo.isControllablePlayer = true;
+            ammo.status = "ap";
+        }
 
         Transform fov = tank.transform.Find("FieldOfView");
         if (fov != null)
