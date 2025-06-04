@@ -10564,6 +10564,7 @@ MonoBehaviour:
   APmax: 20
   HEmax: 10
   Multiple: 1
+  isControllablePlayer: 0
 --- !u!114 &247225912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16301,6 +16302,7 @@ MonoBehaviour:
   turretTransform: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  controller: {fileID: 0}
   viewAngle: 150
   viewDistance: 60
   fireCooldown: 2
@@ -16313,6 +16315,7 @@ MonoBehaviour:
   coverLayer:
     serializedVersion: 2
     m_Bits: 0
+  currentTarget: {fileID: 0}
   isDestroyed: 0
   isPlayerControlled: 1
 --- !u!114 &367900473
@@ -17991,6 +17994,7 @@ MonoBehaviour:
   APmax: 20
   HEmax: 10
   Multiple: 1
+  isControllablePlayer: 0
 --- !u!114 &415668797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18194,6 +18198,7 @@ MonoBehaviour:
   turretTransform: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  controller: {fileID: 0}
   viewAngle: 150
   viewDistance: 60
   fireCooldown: 2
@@ -18206,6 +18211,7 @@ MonoBehaviour:
   coverLayer:
     serializedVersion: 2
     m_Bits: 0
+  currentTarget: {fileID: 0}
   isDestroyed: 0
   isPlayerControlled: 0
 --- !u!114 &417616030
@@ -18364,6 +18370,7 @@ MonoBehaviour:
   turretTransform: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  controller: {fileID: 0}
   viewAngle: 150
   viewDistance: 60
   fireCooldown: 2
@@ -18376,6 +18383,7 @@ MonoBehaviour:
   coverLayer:
     serializedVersion: 2
     m_Bits: 0
+  currentTarget: {fileID: 0}
   isDestroyed: 0
   isPlayerControlled: 0
 --- !u!114 &422993945
@@ -24643,6 +24651,7 @@ MonoBehaviour:
   APmax: 20
   HEmax: 10
   Multiple: 1
+  isControllablePlayer: 0
 --- !u!114 &580213962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32782,6 +32791,7 @@ MonoBehaviour:
   APmax: 20
   HEmax: 10
   Multiple: 1
+  isControllablePlayer: 1
 --- !u!114 &762263606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40611,6 +40621,7 @@ MonoBehaviour:
   APmax: 20
   HEmax: 10
   Multiple: 1
+  isControllablePlayer: 0
 --- !u!114 &973511292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41107,6 +41118,7 @@ MonoBehaviour:
   turretTransform: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  controller: {fileID: 0}
   viewAngle: 150
   viewDistance: 60
   fireCooldown: 2
@@ -41119,6 +41131,7 @@ MonoBehaviour:
   coverLayer:
     serializedVersion: 2
     m_Bits: 0
+  currentTarget: {fileID: 0}
   isDestroyed: 0
   isPlayerControlled: 0
 --- !u!114 &976942969
@@ -57703,6 +57716,7 @@ MonoBehaviour:
   turretTransform: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  controller: {fileID: 0}
   viewAngle: 150
   viewDistance: 60
   fireCooldown: 2
@@ -57715,6 +57729,7 @@ MonoBehaviour:
   coverLayer:
     serializedVersion: 2
     m_Bits: 0
+  currentTarget: {fileID: 0}
   isDestroyed: 0
   isPlayerControlled: 0
 --- !u!114 &1286299300
@@ -57823,7 +57838,7 @@ Transform:
   m_GameObject: {fileID: 1286299298}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -723, y: 791.60004, z: 0}
+  m_LocalPosition: {x: -747, y: 826, z: 0}
   m_LocalScale: {x: 7.3250237, y: 7.3250237, z: 7.3250237}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67048,7 +67063,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.53333336
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
@@ -67802,6 +67817,7 @@ GameObject:
   - component: {fileID: 1533013504}
   - component: {fileID: 1533013503}
   - component: {fileID: 1533013502}
+  - component: {fileID: 1533013508}
   m_Layer: 9
   m_Name: body_0
   m_TagString: Enemy
@@ -67844,6 +67860,7 @@ MonoBehaviour:
   APmax: 20
   HEmax: 10
   Multiple: 1
+  isControllablePlayer: 0
 --- !u!114 &1533013503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68005,6 +68022,20 @@ MonoBehaviour:
   rotationDragFactor: 0.5
   rb: {fileID: 1533013505}
   ammunityStock: {fileID: 0}
+--- !u!114 &1533013508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533013500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003ab29cec50a98418adef1b359a2ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthUIPrefab: {fileID: 4267823628763152102, guid: 45e77ee6069239046b33353d1b291aba, type: 3}
+  uiOffset: {x: 7, y: 3, z: 0}
 --- !u!1 &1535306181
 GameObject:
   m_ObjectHideFlags: 0
@@ -90506,6 +90537,7 @@ MonoBehaviour:
   turretTransform: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  controller: {fileID: 0}
   viewAngle: 150
   viewDistance: 60
   fireCooldown: 2
@@ -90518,6 +90550,7 @@ MonoBehaviour:
   coverLayer:
     serializedVersion: 2
     m_Bits: 0
+  currentTarget: {fileID: 0}
   isDestroyed: 0
   isPlayerControlled: 0
 --- !u!114 &2054815182
