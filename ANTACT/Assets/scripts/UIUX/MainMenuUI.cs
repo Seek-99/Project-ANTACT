@@ -91,6 +91,11 @@ public class MainMenuUI : MonoBehaviour
     }
 
     // 시나리오 선택
+    public void OnClickTutorialMap()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
     public void OnClickTestMap()
     {
         SceneManager.LoadScene("Map1Scene");

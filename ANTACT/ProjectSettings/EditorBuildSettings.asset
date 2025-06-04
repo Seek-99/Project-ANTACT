@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scenario2Map1.unity
     guid: a9c10e69ba5e1204f94dabf0ecd179ec
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 23cbd643bead6c546badf63b34e23865
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
