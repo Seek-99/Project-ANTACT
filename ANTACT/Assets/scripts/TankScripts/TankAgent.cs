@@ -12,6 +12,7 @@ public class TankAgent : Agent
     public Transform turretTransform;
     public GameObject projectilePrefab;
     public Transform firePoint;
+    public TankFSMController controller;
 
     public float viewAngle = 150f;
     public float viewDistance = 60f;
@@ -22,7 +23,7 @@ public class TankAgent : Agent
     public LayerMask obstacleLayer;
     public LayerMask coverLayer;
 
-    private GameObject currentTarget;
+    public GameObject currentTarget;
 
     public bool isDestroyed = false;
     public bool isPlayerControlled = false;

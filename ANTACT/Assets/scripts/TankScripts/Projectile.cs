@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.MLAgents;
+using UnityEngine.InputSystem.XR;
 
 public class Projectile : MonoBehaviour
 {
@@ -59,6 +60,7 @@ public class Projectile : MonoBehaviour
             {
                 hitAgent.AddReward(-2f);
                 Debug.Log($"{collision.gameObject.transform.parent}: 피격! - 발사자: {owner}, Reward: -2");
+                collision.gameObject.GetComponentInParent<TankAgent>().controller.OnDamaged(owner.gameObject);
             }
             else
             {

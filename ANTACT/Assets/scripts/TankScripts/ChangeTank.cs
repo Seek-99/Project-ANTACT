@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.MLAgents.Policies;
+using UnityEngine.AI;
 
 public class ChangeTank : MonoBehaviour
 {
@@ -42,8 +43,15 @@ public class ChangeTank : MonoBehaviour
     {
         tank.GetComponent<TankInputController>().enabled = false;
         tank.GetComponent<PlayerInput>().enabled = false;
-        tank.GetComponent<BehaviorParameters>().enabled = true;
+        tank.GetComponent<TankFSMController>().enabled = true;
+        tank.GetComponent<NavMeshAgent>().enabled = true;
         tank.GetComponent<TankAgent>().enabled = true;
+
+        Transform turret = tank.transform.Find("body_0/Turret_0");
+        if (turret != null)
+        {
+            turret.tag = "Untagged"; // AI 모드일 때 터렛 태그 변경
+        }
 
         var ammo = tank.GetComponentInChildren<AmmunityStock>();
         if (ammo != null)
@@ -61,8 +69,15 @@ public class ChangeTank : MonoBehaviour
     {
         tank.GetComponent<TankInputController>().enabled = true;
         tank.GetComponent<PlayerInput>().enabled = true;
-        tank.GetComponent<BehaviorParameters>().enabled = false;
+        tank.GetComponent<TankFSMController>().enabled = false;
+        tank.GetComponent<NavMeshAgent>().enabled = false;
         tank.GetComponent<TankAgent>().enabled = false;
+
+        Transform turret = tank.transform.Find("body_0/Turret_0");
+        if (turret != null)
+        {
+            turret.tag = "player"; // AI 모드일 때 터렛 태그 변경
+        }
 
         var ammo = tank.GetComponentInChildren<AmmunityStock>();
         if (ammo != null)
