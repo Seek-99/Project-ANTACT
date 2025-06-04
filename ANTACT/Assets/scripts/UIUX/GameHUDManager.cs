@@ -28,6 +28,8 @@ public class GameHUDManager : MonoBehaviour
     public AudioSource sfxSource;
     public Slider bgmSlider;
     public Slider sfxSlider;
+    public TMP_Text bgmVolumeValueText;
+    public TMP_Text sfxVolumeValueText;
 
     private float bgmVolume = 0.5f;
     private float sfxVolume = 0.5f;
@@ -45,6 +47,9 @@ public class GameHUDManager : MonoBehaviour
 
         bgmSlider.onValueChanged.AddListener(OnBGMSliderChanged);
         sfxSlider.onValueChanged.AddListener(OnSFXSliderChanged);
+
+        UpdateBGMVolumeText(bgmVolume);
+        UpdateSFXVolumeText(sfxVolume);
 
         optionMenuContainer.SetActive(false);
         soundPanel.SetActive(false);
@@ -76,6 +81,8 @@ public class GameHUDManager : MonoBehaviour
         bgmVolume = value;
         if (bgmSource != null)
             bgmSource.volume = value;
+
+        UpdateBGMVolumeText(value);
     }
 
     public void OnSFXSliderChanged(float value)
@@ -83,6 +90,28 @@ public class GameHUDManager : MonoBehaviour
         sfxVolume = value;
         if (sfxSource != null)
             sfxSource.volume = value;
+
+        UpdateSFXVolumeText(value);
+    }
+
+    private void UpdateBGMVolumeText(float value)
+    {
+        if (bgmVolumeValueText != null)
+            bgmVolumeValueText.text = Mathf.RoundToInt(value * 100) + "%";
+    }
+
+    private void UpdateSFXVolumeText(float value)
+    {
+        if (sfxVolumeValueText != null)
+            sfxVolumeValueText.text = Mathf.RoundToInt(value * 100) + "%";
+    }
+
+    public void OnClickApplySoundSettings()
+    {
+        bgmSource.volume = bgmSlider.value;
+        sfxSource.volume = sfxSlider.value;
+
+        Debug.Log($"[사운드 적용] BGM: {bgmSource.volume}, SFX: {sfxSource.volume}");
     }
 
     // ��ư ���� �Լ�
