@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameHUDManager : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class GameHUDManager : MonoBehaviour
 
     void Start()
     {
-        // �����̴� �ʱ�ȭ
+        // sound
         bgmSlider.value = bgmVolume;
         sfxSlider.value = sfxVolume;
 
@@ -109,10 +110,7 @@ public class GameHUDManager : MonoBehaviour
 
     public void OnClickQuitGame()
     {
-        Application.Quit();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        SceneManager.LoadScene("StartScene");
     }
 
     // ���ɷ�/���� ������Ʈ �� ���
