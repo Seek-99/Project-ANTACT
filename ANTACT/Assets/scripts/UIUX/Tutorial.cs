@@ -92,6 +92,9 @@ public class Tutorial : MonoBehaviour
                 break;
             case 14:
                 ChangeText("원에 들어가 거점을 점령하세요.");
+                break;
+            case 15:
+                ChangeText("튜토리얼이 완료되었습니다. 완료 버튼을 눌러 진행하세요.");
                 if (completeButton != null)
                     completeButton.SetActive(true);
                 break;
