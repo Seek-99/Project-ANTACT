@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
 
 
     public GameObject HelperUI;
+    public GameObject completeButton;
     public Text HelperText;
     public PlayerHealth playerHealth; // 플레이어의 Health 스크립트 참조
     private int currentStep = 0;
@@ -90,6 +92,8 @@ public class Tutorial : MonoBehaviour
                 break;
             case 14:
                 ChangeText("원에 들어가 거점을 점령하세요.");
+                if (completeButton != null)
+                    completeButton.SetActive(true);
                 break;
             default:
                 HelperUI.SetActive(false);
@@ -103,5 +107,10 @@ public class Tutorial : MonoBehaviour
         {
             HelperText.text = text;
         }
+    }
+
+    public void OnClickCompleteTutorial()
+    {
+        SceneManager.LoadScene("Map1Scene");
     }
 }
