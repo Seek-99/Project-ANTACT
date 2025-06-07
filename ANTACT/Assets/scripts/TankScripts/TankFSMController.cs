@@ -14,6 +14,7 @@ public class TankFSMController : MonoBehaviour
     public TankTurret tankTurret;
     public Transform[] captureEntrances;
     public Transform captureZoneCenter;
+    public Transform captureZoneExcept;
     public TankAgent tankAgent;
     [SerializeField]
     Transform target;
@@ -140,26 +141,24 @@ public class TankFSMController : MonoBehaviour
     }
     Vector2 GetRandomPointInCollider2D(Collider2D collider)
     {
-        Vector2 minBounds = collider.bounds.min;
-        Vector2 maxBounds = collider.bounds.max;
+        Vector2 randomPoint;
 
-        float randomX = Random.Range(minBounds.x, maxBounds.x);
-        float randomY = Random.Range(minBounds.y, maxBounds.y);
-
-        Vector2 randomPoint = new Vector2(randomX, randomY);
-
-        // 점이 콜라이더 내부인지 확인
-        if (collider.OverlapPoint(randomPoint))
+        do
         {
-            return randomPoint;
+            Vector2 minBounds = collider.bounds.min;
+            Vector2 maxBounds = collider.bounds.max;
+
+            float randomX = Random.Range(minBounds.x, maxBounds.x);
+            float randomY = Random.Range(minBounds.y, maxBounds.y);
+
+            randomPoint = new Vector2(randomX, randomY);
         }
-        else
-        {
-            return GetRandomPointInCollider2D(collider); // 내부에 없으면 다시 시도
-        }
+        while (!collider.OverlapPoint(randomPoint) || captureZoneExcept.GetComponent<Collider2D>().OverlapPoint(randomPoint));
+
+        return randomPoint;
     }
 
-    void LookAtMovementDirection()
+        void LookAtMovementDirection()
     {
         Vector3 velocity = navMeshAgent.velocity;
         Debug.Log("FSM LOOK");

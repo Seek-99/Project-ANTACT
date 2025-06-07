@@ -16238,6 +16238,8 @@ GameObject:
   - component: {fileID: 367900473}
   - component: {fileID: 367900472}
   - component: {fileID: 367900476}
+  - component: {fileID: 367900478}
+  - component: {fileID: 367900477}
   m_Layer: 6
   m_Name: PlayerTank
   m_TagString: Untagged
@@ -16288,7 +16290,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367900469}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45917365f0682b546aaa44b5a2f3f26b, type: 3}
   m_Name: 
@@ -16411,6 +16413,48 @@ MonoBehaviour:
   player1: {fileID: 367900469}
   player2: {fileID: 422993943}
   player3: {fileID: 2054815180}
+--- !u!195 &367900477
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367900469}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &367900478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367900469}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09ec9a0171fb91746a4d65d4d842d567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankBody: {fileID: 0}
+  tankTurret: {fileID: 0}
+  captureEntrances: []
+  captureZoneCenter: {fileID: 0}
+  captureZoneExcept: {fileID: 0}
+  tankAgent: {fileID: 0}
+  target: {fileID: 0}
+  navMeshAgent: {fileID: 0}
 --- !u!1 &367905106
 GameObject:
   m_ObjectHideFlags: 0
@@ -18342,6 +18386,8 @@ GameObject:
   - component: {fileID: 422993946}
   - component: {fileID: 422993945}
   - component: {fileID: 422993944}
+  - component: {fileID: 422993951}
+  - component: {fileID: 422993950}
   m_Layer: 6
   m_Name: AllyTank1
   m_TagString: Untagged
@@ -18356,7 +18402,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422993943}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45917365f0682b546aaa44b5a2f3f26b, type: 3}
   m_Name: 
@@ -18408,7 +18454,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 8f9321838295d28459d97a5674c635a6, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: TankAgent
@@ -18500,6 +18546,48 @@ Transform:
   - {fileID: 2070702973}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &422993950
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422993943}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &422993951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422993943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09ec9a0171fb91746a4d65d4d842d567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankBody: {fileID: 0}
+  tankTurret: {fileID: 0}
+  captureEntrances: []
+  captureZoneCenter: {fileID: 0}
+  captureZoneExcept: {fileID: 0}
+  tankAgent: {fileID: 0}
+  target: {fileID: 0}
+  navMeshAgent: {fileID: 0}
 --- !u!1 &425406268
 GameObject:
   m_ObjectHideFlags: 0
@@ -39695,6 +39783,8 @@ MonoBehaviour:
   sfxSource: {fileID: 2145259249}
   bgmSlider: {fileID: 1405462283}
   sfxSlider: {fileID: 1423983042}
+  bgmVolumeValueText: {fileID: 0}
+  sfxVolumeValueText: {fileID: 0}
 --- !u!4 &949293972
 Transform:
   m_ObjectHideFlags: 0
@@ -90509,6 +90599,8 @@ GameObject:
   - component: {fileID: 2054815183}
   - component: {fileID: 2054815182}
   - component: {fileID: 2054815181}
+  - component: {fileID: 2054815188}
+  - component: {fileID: 2054815187}
   m_Layer: 6
   m_Name: AllyTank2
   m_TagString: Untagged
@@ -90523,7 +90615,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054815180}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45917365f0682b546aaa44b5a2f3f26b, type: 3}
   m_Name: 
@@ -90575,7 +90667,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 8f9321838295d28459d97a5674c635a6, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: TankAgent
@@ -90667,6 +90759,48 @@ Transform:
   - {fileID: 653125740}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &2054815187
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054815180}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &2054815188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054815180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09ec9a0171fb91746a4d65d4d842d567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankBody: {fileID: 0}
+  tankTurret: {fileID: 0}
+  captureEntrances: []
+  captureZoneCenter: {fileID: 0}
+  captureZoneExcept: {fileID: 0}
+  tankAgent: {fileID: 0}
+  target: {fileID: 0}
+  navMeshAgent: {fileID: 0}
 --- !u!1 &2056351259
 GameObject:
   m_ObjectHideFlags: 0
