@@ -2,31 +2,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
-
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
     public Image fill;
     public Text healthText;
     public Text apText;
-
     public Text heText;
-
     public Text healthItemText;
 
     public GameObject player1;
-
     public GameObject player2;
     public GameObject player3;
+
     public PlayerHealth playerHealth;
     public AmmunityStock ammunityStock;
-
     public HealthStock healthStock;
 
     private float AP;
-
     private float HE;
-
     private float HealthItemValue;
 
     void Start()
@@ -34,35 +28,20 @@ public class HealthBar : MonoBehaviour
         slider.interactable = false;
 
         if (playerHealth != null)
-        {
             SetMaxHealth(playerHealth.maxHealth);
+
+        if (playerHealth != null)
             SetHealth(playerHealth.GetCurrentHealth());
-        }
-        else
-        {
-            Debug.LogWarning("PlayerHealth 컴포넌트를 찾을 수 없습니다!");
-        }
 
         if (ammunityStock != null)
         {
             SetAP(ammunityStock.GetCurrentAP());
             SetHE(ammunityStock.GetCurrentHE());
         }
-        else
-        {
-            Debug.LogWarning("AmmunityStock 컴포넌트를 찾을 수 없습니다!");
-        }
+
         if (healthStock != null)
-        {
             SetHealthValue(healthStock.GetCurrentHealthValue());
-        }
-        else
-        {
-            Debug.LogWarning("HealthStock 컴포넌트를 찾을 수 없습니다!");
-        }
     }
-
-
 
     public void SetMaxHealth(float health)
     {
@@ -80,9 +59,7 @@ public class HealthBar : MonoBehaviour
     private void UpdateHealthText()
     {
         if (healthText != null)
-        {
             healthText.text = $"{slider.value} / {slider.maxValue}";
-        }
     }
 
     private void SetAP(float ap)
@@ -97,119 +74,47 @@ public class HealthBar : MonoBehaviour
         UpdateHE();
     }
 
-    private void SetHealthValue(float heatlhvalue)
+    private void SetHealthValue(float healthValue)
     {
-        HealthItemValue = heatlhvalue;
+        HealthItemValue = healthValue;
         UpdateHealthItemValue();
     }
 
     private void UpdateAP()
     {
         if (apText != null)
-        {
             apText.text = $"{AP}";
-        }
     }
 
     private void UpdateHE()
     {
         if (heText != null)
-        {
             heText.text = $"{HE}";
-        }
     }
 
     private void UpdateHealthItemValue()
     {
         if (healthItemText != null)
-        {
             healthItemText.text = $"{HealthItemValue}";
-        }
     }
 
     void Update()
     {
         if (Keyboard.current.f1Key.wasPressedThisFrame)
         {
-            if (player1 != null)
-            {
-                Transform body = player1.transform.Find("body_0");
-                if (body != null)
-                {
-                    PlayerHealth newHealth = body.GetComponent<PlayerHealth>();
-                    if (newHealth != null)
-                    {
-                        playerHealth = newHealth;
-                        SetMaxHealth(playerHealth.maxHealth); // 슬라이더도 다시 설정
-                        Debug.Log("F1 탱크의 Body에서 PlayerHealth 연결 완료");
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Body 오브젝트에 PlayerHealth 컴포넌트가 없습니다.");
-                    }
-                }
-                else
-                {
-                    Debug.LogWarning("f1Tank에 'Body' 하위 오브젝트를 찾을 수 없습니다.");
-                }
-            }
+            UpdateReferences(player1);
         }
         if (Keyboard.current.f2Key.wasPressedThisFrame)
         {
-            if (player2 != null)
-            {
-                Transform body = player2.transform.Find("body_0");
-                if (body != null)
-                {
-                    PlayerHealth newHealth = body.GetComponent<PlayerHealth>();
-                    if (newHealth != null)
-                    {
-                        playerHealth = newHealth;
-                        SetMaxHealth(playerHealth.maxHealth); // 슬라이더도 다시 설정
-                        Debug.Log("F2 탱크의 Body에서 PlayerHealth 연결 완료");
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Body 오브젝트에 PlayerHealth 컴포넌트가 없습니다.");
-                    }
-                }
-                else
-                {
-                    Debug.LogWarning("f2Tank에 'Body' 하위 오브젝트를 찾을 수 없습니다.");
-                }
-            }
+            UpdateReferences(player2);
         }
         if (Keyboard.current.f3Key.wasPressedThisFrame)
         {
-            if (player3 != null)
-            {
-                Transform body = player3.transform.Find("body_0");
-                if (body != null)
-                {
-                    PlayerHealth newHealth = body.GetComponent<PlayerHealth>();
-                    if (newHealth != null)
-                    {
-                        playerHealth = newHealth;
-                        SetMaxHealth(playerHealth.maxHealth); // 슬라이더도 다시 설정
-                        Debug.Log("F3 탱크의 Body에서 PlayerHealth 연결 완료");
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Body 오브젝트에 PlayerHealth 컴포넌트가 없습니다.");
-                    }
-                }
-                else
-                {
-                    Debug.LogWarning("f3Tank에 'Body' 하위 오브젝트를 찾을 수 없습니다.");
-                }
-            }
+            UpdateReferences(player3);
         }
-
 
         if (playerHealth != null)
-        {
             SetHealth(playerHealth.GetCurrentHealth());
-        }
 
         if (ammunityStock != null)
         {
@@ -218,8 +123,35 @@ public class HealthBar : MonoBehaviour
         }
 
         if (healthStock != null)
-        {
             SetHealthValue(healthStock.GetCurrentHealthValue());
+    }
+
+    private void UpdateReferences(GameObject player)
+    {
+        if (player == null)
+            return;
+
+        Transform body = player.transform.Find("body_0");
+        if (body == null)
+            return;
+
+        PlayerHealth newHealth = body.GetComponent<PlayerHealth>();
+        if (newHealth != null)
+        {
+            playerHealth = newHealth;
+            SetMaxHealth(playerHealth.maxHealth);
+        }
+
+        AmmunityStock newAmmo = body.GetComponent<AmmunityStock>();
+        if (newAmmo != null)
+        {
+            ammunityStock = newAmmo;
+        }
+
+        HealthStock newHealthStock = body.GetComponent<HealthStock>();
+        if (newHealthStock != null)
+        {
+            healthStock = newHealthStock;
         }
     }
 }
