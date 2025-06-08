@@ -114,6 +114,6 @@ public class Tutorial : MonoBehaviour
 
     public void OnClickCompleteTutorial()
     {
-        SceneManager.LoadScene("Map1Scene");
+        SceneManager.LoadScene("StartScene");
     }
 }
