@@ -73,6 +73,7 @@ public class TankFSMController : MonoBehaviour
             obstacle.enabled = true;
             obstacle.carving = true;
             done = true;
+            tankAgent.GetComponent<TankFSMController>().enabled = false;
         }
         currentTarget = tankAgent.currentTarget;
         if (currentTarget == null)
