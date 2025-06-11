@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 6808028}
   - component: {fileID: 6808027}
   - component: {fileID: 6808029}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 25103796}
   - component: {fileID: 25103797}
   - component: {fileID: 25103798}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3206,12 +3206,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833121fddfb81444f9559947a16a1263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 5.8
+  rotateSpeed: 9
   useSmoothRotation: 1
   smoothRotationSpeed: 5
   projectilePrefab: {fileID: 3085477772398715119, guid: 3e94e50158ffd034a9f44229c8ef4852, type: 3}
   firePoint: {fileID: 1252748328}
-  fireCooldown: 5.8
+  fireCooldown: 1.2
   soundController: {fileID: 293494744}
   ammunityStock: {fileID: 1562703875}
 --- !u!212 &92259958
@@ -3281,7 +3281,7 @@ GameObject:
   - component: {fileID: 97129694}
   - component: {fileID: 97129696}
   - component: {fileID: 97129695}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crate_01_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3604,7 +3604,7 @@ GameObject:
   - component: {fileID: 115089040}
   - component: {fileID: 115089041}
   - component: {fileID: 115089042}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3803,7 +3803,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.53333336
+  m_VoxelSize: 0.46666667
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
@@ -3956,7 +3956,7 @@ GameObject:
   - component: {fileID: 127127273}
   - component: {fileID: 127127272}
   - component: {fileID: 127127274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4251,8 +4251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seSource: {fileID: 735089361}
-  moveClip: {fileID: 8300000, guid: 1608c7782028cd143af2c31183fbac00, type: 3}
-  fireClip: {fileID: 8300000, guid: f87ab4b3d904abd4db7262ce622e1585, type: 3}
+  moveClip: {fileID: 8300000, guid: a4fc0fc89d6bfa4489d84850bc13d97e, type: 3}
+  fireClip: {fileID: 8300000, guid: 57799962e31f87943a5d3d956592ffe9, type: 3}
   hitClip: {fileID: 8300000, guid: 1a29eee5130f8e641b95768a55545634, type: 3}
   moveVolume: 1
   fireVolume: 1
@@ -4635,7 +4635,7 @@ GameObject:
   - component: {fileID: 137012412}
   - component: {fileID: 137012413}
   - component: {fileID: 137012414}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4958,7 +4958,7 @@ GameObject:
   - component: {fileID: 151043617}
   - component: {fileID: 151043618}
   - component: {fileID: 151043619}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5281,7 +5281,7 @@ GameObject:
   - component: {fileID: 156345273}
   - component: {fileID: 156345274}
   - component: {fileID: 156345275}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5474,7 +5474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2035b201e1f9743acc6cea2d7a1573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   healthSlider: {fileID: 0}
   currentHealth: 0
   DiedTank: {fileID: 8590166945441213425, guid: 9495879b07f220f49afeb82befb9b53e, type: 3}
@@ -5512,7 +5512,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.000981994, y: -0.02554822}
+  m_Offset: {x: -0.0009819865, y: -0.020021796}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5522,7 +5522,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.3464747, y: 0.6210233}
+  m_Size: {x: 0.3464747, y: 0.72627926}
   m_EdgeRadius: 0
 --- !u!114 &156832976
 MonoBehaviour:
@@ -5536,8 +5536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e38d7d80def6740a6631568e3b32fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4.5
-  rotateSpeed: 50
+  moveSpeed: 2.5
+  rotateSpeed: 30
   rotationDragFactor: 0.5
   rb: {fileID: 156832977}
   ammunityStock: {fileID: 0}
@@ -5651,7 +5651,7 @@ GameObject:
   - component: {fileID: 160707353}
   - component: {fileID: 160707354}
   - component: {fileID: 160707355}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5802,7 +5802,7 @@ GameObject:
   - component: {fileID: 171077070}
   - component: {fileID: 171077072}
   - component: {fileID: 171077073}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_03_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6255,7 +6255,7 @@ GameObject:
   - component: {fileID: 188324458}
   - component: {fileID: 188324459}
   - component: {fileID: 188324460}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6625,7 +6625,7 @@ GameObject:
   - component: {fileID: 201248822}
   - component: {fileID: 201248823}
   - component: {fileID: 201248824}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6776,7 +6776,7 @@ GameObject:
   - component: {fileID: 216117993}
   - component: {fileID: 216117992}
   - component: {fileID: 216117994}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6927,7 +6927,7 @@ GameObject:
   - component: {fileID: 218048301}
   - component: {fileID: 218048300}
   - component: {fileID: 218048302}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7370,7 +7370,7 @@ GameObject:
   - component: {fileID: 227243261}
   - component: {fileID: 227243264}
   - component: {fileID: 227243263}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7521,7 +7521,7 @@ GameObject:
   - component: {fileID: 227377132}
   - component: {fileID: 227377133}
   - component: {fileID: 227377134}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Palm_03_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8202,7 +8202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ee1c8a090d7a093418438508c1071d7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcb6562e94790fb42a69aa6fa2b3de6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8225,7 +8225,7 @@ GameObject:
   - component: {fileID: 259693988}
   - component: {fileID: 259693990}
   - component: {fileID: 259693989}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_05_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8366,7 +8366,7 @@ GameObject:
   - component: {fileID: 263960829}
   - component: {fileID: 263960828}
   - component: {fileID: 263960830}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8748,7 +8748,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.01404791, w: 0.99990135}
   m_LocalPosition: {x: -86.3, y: -75.9, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalScale: {x: 6.5, y: 6.5, z: 6.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1562703881}
@@ -8768,8 +8768,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seSource: {fileID: 735089361}
-  moveClip: {fileID: 8300000, guid: d528ea065c2e1554d908722c2a483dab, type: 3}
-  fireClip: {fileID: 8300000, guid: 8598d95cda3716447b2a85e8eb42f0d6, type: 3}
+  moveClip: {fileID: 8300000, guid: 37e9ab16e353b84408cd11c8c6d706c6, type: 3}
+  fireClip: {fileID: 8300000, guid: c2c147267a054be4a97972cd4eed12f0, type: 3}
   hitClip: {fileID: 8300000, guid: 1a29eee5130f8e641b95768a55545634, type: 3}
   moveVolume: 1
   fireVolume: 1
@@ -9242,7 +9242,7 @@ GameObject:
   - component: {fileID: 316374608}
   - component: {fileID: 316374610}
   - component: {fileID: 316374609}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crate_01_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9636,7 +9636,7 @@ Transform:
   m_GameObject: {fileID: 330239367}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.459, z: 0}
+  m_LocalPosition: {x: 0, y: 0.562, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9956,7 +9956,7 @@ GameObject:
   - component: {fileID: 354201544}
   - component: {fileID: 354201545}
   - component: {fileID: 354201546}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10097,7 +10097,7 @@ GameObject:
   - component: {fileID: 356828159}
   - component: {fileID: 356828158}
   - component: {fileID: 356828160}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10248,7 +10248,7 @@ GameObject:
   - component: {fileID: 362823258}
   - component: {fileID: 362823261}
   - component: {fileID: 362823260}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10571,7 +10571,7 @@ GameObject:
   - component: {fileID: 365557287}
   - component: {fileID: 365557289}
   - component: {fileID: 365557288}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_06_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10863,7 +10863,7 @@ GameObject:
   - component: {fileID: 371304549}
   - component: {fileID: 371304550}
   - component: {fileID: 371304551}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11307,7 +11307,7 @@ GameObject:
   - component: {fileID: 389609525}
   - component: {fileID: 389609524}
   - component: {fileID: 389609526}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: house(3)_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11723,7 +11723,7 @@ GameObject:
   - component: {fileID: 404222865}
   - component: {fileID: 404222866}
   - component: {fileID: 404222867}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Palm_03_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11865,7 +11865,7 @@ GameObject:
   - component: {fileID: 410282629}
   - component: {fileID: 410282628}
   - component: {fileID: 410282630}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12763,7 +12763,7 @@ GameObject:
   - component: {fileID: 455441838}
   - component: {fileID: 455441837}
   - component: {fileID: 455441839}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14153,7 +14153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833121fddfb81444f9559947a16a1263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 0
+  rotateSpeed: 5
   useSmoothRotation: 1
   smoothRotationSpeed: 5
   projectilePrefab: {fileID: 3085477772398715119, guid: 3e94e50158ffd034a9f44229c8ef4852, type: 3}
@@ -14607,7 +14607,7 @@ GameObject:
   - component: {fileID: 496970267}
   - component: {fileID: 496970266}
   - component: {fileID: 496970268}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15102,7 +15102,7 @@ Transform:
   m_GameObject: {fileID: 512369539}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.678, z: 0}
+  m_LocalPosition: {x: 0, y: 0.555, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15238,7 +15238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 531615953}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16099,7 +16099,7 @@ GameObject:
   - component: {fileID: 571930985}
   - component: {fileID: 571930987}
   - component: {fileID: 571930986}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_05_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16240,7 +16240,7 @@ GameObject:
   - component: {fileID: 575234862}
   - component: {fileID: 575234864}
   - component: {fileID: 575234863}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_06_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16381,7 +16381,7 @@ GameObject:
   - component: {fileID: 575236903}
   - component: {fileID: 575236902}
   - component: {fileID: 575236904}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16673,7 +16673,7 @@ GameObject:
   - component: {fileID: 577300911}
   - component: {fileID: 577300912}
   - component: {fileID: 577300913}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16824,7 +16824,7 @@ GameObject:
   - component: {fileID: 580883189}
   - component: {fileID: 580883191}
   - component: {fileID: 580883192}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rock_02_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17117,7 +17117,7 @@ GameObject:
   - component: {fileID: 584537961}
   - component: {fileID: 584537963}
   - component: {fileID: 584537962}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_05_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17711,7 +17711,7 @@ GameObject:
   - component: {fileID: 600611512}
   - component: {fileID: 600611511}
   - component: {fileID: 600611513}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17852,7 +17852,7 @@ GameObject:
   - component: {fileID: 601487110}
   - component: {fileID: 601487111}
   - component: {fileID: 601487112}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18080,7 +18080,7 @@ GameObject:
   - component: {fileID: 609676896}
   - component: {fileID: 609676899}
   - component: {fileID: 609676898}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18231,7 +18231,7 @@ GameObject:
   - component: {fileID: 617212692}
   - component: {fileID: 617212693}
   - component: {fileID: 617212694}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_03_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18382,7 +18382,7 @@ GameObject:
   - component: {fileID: 622180962}
   - component: {fileID: 622180961}
   - component: {fileID: 622180963}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18523,7 +18523,7 @@ GameObject:
   - component: {fileID: 625125893}
   - component: {fileID: 625125894}
   - component: {fileID: 625125895}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18904,7 +18904,7 @@ GameObject:
   - component: {fileID: 639679175}
   - component: {fileID: 639679176}
   - component: {fileID: 639679177}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19206,7 +19206,7 @@ GameObject:
   - component: {fileID: 642072543}
   - component: {fileID: 642072544}
   - component: {fileID: 642072545}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20216,7 +20216,7 @@ GameObject:
   - component: {fileID: 678687821}
   - component: {fileID: 678687823}
   - component: {fileID: 678687822}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crate_01_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20367,7 +20367,7 @@ GameObject:
   - component: {fileID: 681923905}
   - component: {fileID: 681923906}
   - component: {fileID: 681923907}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20505,7 +20505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 682812116}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20745,7 +20745,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.01404791, w: 0.99990135}
   m_LocalPosition: {x: -25.2, y: -97.3, z: 0}
-  m_LocalScale: {x: 7.3250237, y: 7.3250237, z: 7.3250237}
+  m_LocalScale: {x: 8.5, y: 8.5, z: 8.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 156832979}
@@ -20765,8 +20765,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seSource: {fileID: 735089361}
-  moveClip: {fileID: 8300000, guid: 83d2fa971f1987b46ac4179b027d7bec, type: 3}
-  fireClip: {fileID: 8300000, guid: 43dc862b8b413f74baad1b41d6f39ad4, type: 3}
+  moveClip: {fileID: 8300000, guid: c04150460472b5d4da8a838611e227c1, type: 3}
+  fireClip: {fileID: 8300000, guid: ae3ce1ec778ad7c4fbd483303cae9a44, type: 3}
   hitClip: {fileID: 8300000, guid: 1a29eee5130f8e641b95768a55545634, type: 3}
   moveVolume: 1
   fireVolume: 1
@@ -20959,7 +20959,7 @@ GameObject:
   - component: {fileID: 697175366}
   - component: {fileID: 697175369}
   - component: {fileID: 697175368}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22139,7 +22139,7 @@ Transform:
   m_GameObject: {fileID: 737685288}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.695, z: 0}
+  m_LocalPosition: {x: 0, y: 0.597, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22157,7 +22157,7 @@ GameObject:
   - component: {fileID: 742657974}
   - component: {fileID: 742657976}
   - component: {fileID: 742657977}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22377,7 +22377,7 @@ GameObject:
   - component: {fileID: 770478709}
   - component: {fileID: 770478712}
   - component: {fileID: 770478711}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22528,7 +22528,7 @@ GameObject:
   - component: {fileID: 771514036}
   - component: {fileID: 771514037}
   - component: {fileID: 771514038}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22865,7 +22865,7 @@ GameObject:
   - component: {fileID: 791914493}
   - component: {fileID: 791914494}
   - component: {fileID: 791914495}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23621,7 +23621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 824251248}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23665,7 +23665,7 @@ GameObject:
   - component: {fileID: 825313509}
   - component: {fileID: 825313510}
   - component: {fileID: 825313511}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23816,7 +23816,7 @@ GameObject:
   - component: {fileID: 842825492}
   - component: {fileID: 842825493}
   - component: {fileID: 842825494}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Palm_03_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24166,7 +24166,7 @@ GameObject:
   - component: {fileID: 856566028}
   - component: {fileID: 856566029}
   - component: {fileID: 856566030}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24695,7 +24695,7 @@ GameObject:
   - component: {fileID: 869248832}
   - component: {fileID: 869248833}
   - component: {fileID: 869248834}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24846,7 +24846,7 @@ GameObject:
   - component: {fileID: 876476522}
   - component: {fileID: 876476523}
   - component: {fileID: 876476524}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25326,7 +25326,7 @@ GameObject:
   - component: {fileID: 897809857}
   - component: {fileID: 897809856}
   - component: {fileID: 897809858}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25775,7 +25775,7 @@ GameObject:
   - component: {fileID: 910793249}
   - component: {fileID: 910793248}
   - component: {fileID: 910793250}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26108,7 +26108,7 @@ GameObject:
   - component: {fileID: 921597245}
   - component: {fileID: 921597244}
   - component: {fileID: 921597246}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26501,7 +26501,7 @@ GameObject:
   - component: {fileID: 929818965}
   - component: {fileID: 929818964}
   - component: {fileID: 929818966}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26681,7 +26681,7 @@ GameObject:
   - component: {fileID: 938486596}
   - component: {fileID: 938486595}
   - component: {fileID: 938486597}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27124,7 +27124,7 @@ GameObject:
   - component: {fileID: 939602142}
   - component: {fileID: 939602141}
   - component: {fileID: 939602143}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27265,7 +27265,7 @@ GameObject:
   - component: {fileID: 944669252}
   - component: {fileID: 944669254}
   - component: {fileID: 944669253}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_06_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27756,7 +27756,7 @@ GameObject:
   - component: {fileID: 959857046}
   - component: {fileID: 959857045}
   - component: {fileID: 959857047}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27907,7 +27907,7 @@ GameObject:
   - component: {fileID: 960005133}
   - component: {fileID: 960005136}
   - component: {fileID: 960005135}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28058,7 +28058,7 @@ GameObject:
   - component: {fileID: 960817525}
   - component: {fileID: 960817527}
   - component: {fileID: 960817526}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_06_0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28350,7 +28350,7 @@ GameObject:
   - component: {fileID: 968847373}
   - component: {fileID: 968847375}
   - component: {fileID: 968847376}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28491,7 +28491,7 @@ GameObject:
   - component: {fileID: 972458258}
   - component: {fileID: 972458259}
   - component: {fileID: 972458260}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28973,7 +28973,7 @@ MonoBehaviour:
   fireCooldown: 3
   APmax: 20
   HEmax: 2
-  Multiple: 1
+  Multiple: 1.2
   isControllablePlayer: 0
 --- !u!114 &984441030
 MonoBehaviour:
@@ -29001,7 +29001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2035b201e1f9743acc6cea2d7a1573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 100
   healthSlider: {fileID: 0}
   currentHealth: 0
   DiedTank: {fileID: 8590166945441213425, guid: 9495879b07f220f49afeb82befb9b53e, type: 3}
@@ -29039,7 +29039,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.00055886805, y: -0.07918373}
+  m_Offset: {x: -0.0043112934, y: -0.009738445}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -29049,7 +29049,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.3147721, y: 0.63699114}
+  m_Size: {x: 0.3843196, y: 0.5778439}
   m_EdgeRadius: 0
 --- !u!50 &984441033
 Rigidbody2D:
@@ -29122,7 +29122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e5401a1274f2acf4093b4a1d33fc0db3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e72116713cedab44a26ce751cf104fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -29161,8 +29161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e38d7d80def6740a6631568e3b32fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  rotateSpeed: 65
+  moveSpeed: 4.5
+  rotateSpeed: 50
   rotationDragFactor: 0.5
   rb: {fileID: 984441033}
   ammunityStock: {fileID: 0}
@@ -29329,7 +29329,7 @@ GameObject:
   - component: {fileID: 994233265}
   - component: {fileID: 994233264}
   - component: {fileID: 994233266}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29713,7 +29713,7 @@ GameObject:
   - component: {fileID: 1000201295}
   - component: {fileID: 1000201298}
   - component: {fileID: 1000201297}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crate_01_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30015,7 +30015,7 @@ GameObject:
   - component: {fileID: 1012485479}
   - component: {fileID: 1012485481}
   - component: {fileID: 1012485482}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Palm_03_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30232,7 +30232,7 @@ GameObject:
   - component: {fileID: 1016493584}
   - component: {fileID: 1016493586}
   - component: {fileID: 1016493587}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Palm_02_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30695,8 +30695,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seSource: {fileID: 735089361}
-  moveClip: {fileID: 8300000, guid: a4fc0fc89d6bfa4489d84850bc13d97e, type: 3}
-  fireClip: {fileID: 8300000, guid: 57799962e31f87943a5d3d956592ffe9, type: 3}
+  moveClip: {fileID: 8300000, guid: caa03aecec0cb494a8fbe7607c0de7ee, type: 3}
+  fireClip: {fileID: 8300000, guid: a75308cfa6fa8664a92c2ae7197268b2, type: 3}
   hitClip: {fileID: 8300000, guid: 1a29eee5130f8e641b95768a55545634, type: 3}
   moveVolume: 1
   fireVolume: 1
@@ -30928,7 +30928,7 @@ GameObject:
   - component: {fileID: 1033056176}
   - component: {fileID: 1033056178}
   - component: {fileID: 1033056179}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rock_01_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31070,7 +31070,7 @@ GameObject:
   - component: {fileID: 1036565724}
   - component: {fileID: 1036565727}
   - component: {fileID: 1036565726}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31372,7 +31372,7 @@ GameObject:
   - component: {fileID: 1038079904}
   - component: {fileID: 1038079905}
   - component: {fileID: 1038079906}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31674,7 +31674,7 @@ GameObject:
   - component: {fileID: 1044096396}
   - component: {fileID: 1044096397}
   - component: {fileID: 1044096398}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32159,7 +32159,7 @@ GameObject:
   - component: {fileID: 1052512452}
   - component: {fileID: 1052512453}
   - component: {fileID: 1052512454}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32469,7 +32469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1059159876}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32512,7 +32512,7 @@ GameObject:
   - component: {fileID: 1060553326}
   - component: {fileID: 1060553325}
   - component: {fileID: 1060553327}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: house(3)_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32711,7 +32711,7 @@ GameObject:
   - component: {fileID: 1078346786}
   - component: {fileID: 1078346785}
   - component: {fileID: 1078346787}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33018,7 +33018,7 @@ GameObject:
   - component: {fileID: 1083989210}
   - component: {fileID: 1083989211}
   - component: {fileID: 1083989212}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33322,7 +33322,7 @@ GameObject:
   - component: {fileID: 1098650951}
   - component: {fileID: 1098650950}
   - component: {fileID: 1098650952}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33732,7 +33732,7 @@ GameObject:
   - component: {fileID: 1121204754}
   - component: {fileID: 1121204757}
   - component: {fileID: 1121204756}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_05_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33873,7 +33873,7 @@ GameObject:
   - component: {fileID: 1125453935}
   - component: {fileID: 1125453936}
   - component: {fileID: 1125453937}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34014,7 +34014,7 @@ GameObject:
   - component: {fileID: 1129736739}
   - component: {fileID: 1129736740}
   - component: {fileID: 1129736741}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34571,7 +34571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833121fddfb81444f9559947a16a1263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 10
+  rotateSpeed: 8
   useSmoothRotation: 1
   smoothRotationSpeed: 5
   projectilePrefab: {fileID: 3085477772398715119, guid: 3e94e50158ffd034a9f44229c8ef4852, type: 3}
@@ -34639,7 +34639,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: df35290bf3c6a6d4ebead7efeb4da27d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcb6562e94790fb42a69aa6fa2b3de6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -35478,7 +35478,7 @@ GameObject:
   - component: {fileID: 1195233998}
   - component: {fileID: 1195233999}
   - component: {fileID: 1195234000}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35770,7 +35770,7 @@ GameObject:
   - component: {fileID: 1208736766}
   - component: {fileID: 1208736767}
   - component: {fileID: 1208736768}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36298,7 +36298,7 @@ GameObject:
   - component: {fileID: 1221361150}
   - component: {fileID: 1221361151}
   - component: {fileID: 1221361152}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36585,7 +36585,7 @@ GameObject:
   - component: {fileID: 1240981531}
   - component: {fileID: 1240981532}
   - component: {fileID: 1240981533}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36900,7 +36900,7 @@ Transform:
   m_GameObject: {fileID: 1252748327}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.64, z: 0}
+  m_LocalPosition: {x: 0, y: 0.477, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36918,7 +36918,7 @@ GameObject:
   - component: {fileID: 1257197895}
   - component: {fileID: 1257197898}
   - component: {fileID: 1257197897}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37105,7 +37105,7 @@ GameObject:
   - component: {fileID: 1269189916}
   - component: {fileID: 1269189919}
   - component: {fileID: 1269189918}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37256,7 +37256,7 @@ GameObject:
   - component: {fileID: 1277453115}
   - component: {fileID: 1277453116}
   - component: {fileID: 1277453117}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37633,7 +37633,7 @@ GameObject:
   - component: {fileID: 1281026536}
   - component: {fileID: 1281026537}
   - component: {fileID: 1281026538}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38090,7 +38090,7 @@ GameObject:
   - component: {fileID: 1297197459}
   - component: {fileID: 1297197460}
   - component: {fileID: 1297197461}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38694,7 +38694,7 @@ GameObject:
   - component: {fileID: 1306764971}
   - component: {fileID: 1306764972}
   - component: {fileID: 1306764973}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Palm_03_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39312,8 +39312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seSource: {fileID: 735089361}
-  moveClip: {fileID: 8300000, guid: 94710f37859e7174988eae8893100495, type: 3}
-  fireClip: {fileID: 8300000, guid: 88c84560bc23878488f74d1abb8645df, type: 3}
+  moveClip: {fileID: 8300000, guid: a4fc0fc89d6bfa4489d84850bc13d97e, type: 3}
+  fireClip: {fileID: 8300000, guid: 57799962e31f87943a5d3d956592ffe9, type: 3}
   hitClip: {fileID: 8300000, guid: 1a29eee5130f8e641b95768a55545634, type: 3}
   moveVolume: 1
   fireVolume: 1
@@ -39423,7 +39423,7 @@ MonoBehaviour:
   fireCooldown: 3
   APmax: 20
   HEmax: 10
-  Multiple: 1
+  Multiple: 1.2
   isControllablePlayer: 0
 --- !u!114 &1331551130
 MonoBehaviour:
@@ -39489,7 +39489,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.00084117055, y: -0.06950325}
+  m_Offset: {x: 0.0022072494, y: 0.0032668859}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -39499,7 +39499,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.33654296, y: 0.65551233}
+  m_Size: {x: 0.36463428, y: 0.57201004}
   m_EdgeRadius: 0
 --- !u!50 &1331551133
 Rigidbody2D:
@@ -39572,7 +39572,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dd5a43a8b987f8b4ba8bad9922f00799, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e72116713cedab44a26ce751cf104fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -39611,7 +39611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e38d7d80def6740a6631568e3b32fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5.3
+  moveSpeed: 4.5
   rotateSpeed: 50
   rotationDragFactor: 0.5
   rb: {fileID: 1331551133}
@@ -39782,8 +39782,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seSource: {fileID: 735089361}
-  moveClip: {fileID: 8300000, guid: efe974a92263b1e4585d6cb7bff8ebd9, type: 3}
-  fireClip: {fileID: 8300000, guid: 062f743233f3a494a8dc0f4131c547c4, type: 3}
+  moveClip: {fileID: 8300000, guid: a4fc0fc89d6bfa4489d84850bc13d97e, type: 3}
+  fireClip: {fileID: 8300000, guid: 57799962e31f87943a5d3d956592ffe9, type: 3}
   hitClip: {fileID: 8300000, guid: 1a29eee5130f8e641b95768a55545634, type: 3}
   moveVolume: 1
   fireVolume: 1
@@ -39845,7 +39845,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.98269963, w: 0.18520668}
   m_LocalPosition: {x: 59.3, y: 77.7, z: 0}
-  m_LocalScale: {x: 6.5, y: 6.5, z: 6.5}
+  m_LocalScale: {x: 7.325024, y: 7.325024, z: 7.325024}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 984441035}
@@ -40051,7 +40051,7 @@ GameObject:
   - component: {fileID: 1352881930}
   - component: {fileID: 1352881932}
   - component: {fileID: 1352881933}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roof3_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40806,7 +40806,7 @@ GameObject:
   - component: {fileID: 1372025495}
   - component: {fileID: 1372025494}
   - component: {fileID: 1372025496}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41259,7 +41259,7 @@ GameObject:
   - component: {fileID: 1387214198}
   - component: {fileID: 1387214197}
   - component: {fileID: 1387214199}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41409,7 +41409,7 @@ GameObject:
   - component: {fileID: 1394826986}
   - component: {fileID: 1394826987}
   - component: {fileID: 1394826988}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_03_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42027,7 +42027,7 @@ GameObject:
   - component: {fileID: 1423253729}
   - component: {fileID: 1423253730}
   - component: {fileID: 1423253731}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42908,7 +42908,7 @@ GameObject:
   - component: {fileID: 1478575393}
   - component: {fileID: 1478575397}
   - component: {fileID: 1478575398}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: house(4)_0
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -43090,7 +43090,7 @@ GameObject:
   - component: {fileID: 1481848931}
   - component: {fileID: 1481848930}
   - component: {fileID: 1481848932}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43481,7 +43481,7 @@ GameObject:
   - component: {fileID: 1514813693}
   - component: {fileID: 1514813694}
   - component: {fileID: 1514813695}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43634,7 +43634,7 @@ GameObject:
   - component: {fileID: 1518329805}
   - component: {fileID: 1518329804}
   - component: {fileID: 1518329806}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43962,7 +43962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1541529084}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44018,7 +44018,7 @@ GameObject:
   - component: {fileID: 1542244322}
   - component: {fileID: 1542244324}
   - component: {fileID: 1542244323}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crate_01_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44362,7 +44362,7 @@ GameObject:
   - component: {fileID: 1554635772}
   - component: {fileID: 1554635773}
   - component: {fileID: 1554635774}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44538,10 +44538,10 @@ MonoBehaviour:
   AP: 10
   HE: 1
   status: ap
-  fireCooldown: 5.8
+  fireCooldown: 1.2
   APmax: 20
   HEmax: 2
-  Multiple: 1.8
+  Multiple: 0.4
   isControllablePlayer: 0
 --- !u!114 &1562703876
 MonoBehaviour:
@@ -44555,7 +44555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2035b201e1f9743acc6cea2d7a1573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 180
+  maxHealth: 70
   healthSlider: {fileID: 0}
   currentHealth: 0
   DiedTank: {fileID: 8590166945441213425, guid: 9495879b07f220f49afeb82befb9b53e, type: 3}
@@ -44593,7 +44593,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00039970875, y: -0.0051221848}
+  m_Offset: {x: -0.0029361844, y: -0.06213799}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -44603,7 +44603,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.35197282, y: 0.6492481}
+  m_Size: {x: 0.3047549, y: 0.588154}
   m_EdgeRadius: 0
 --- !u!114 &1562703878
 MonoBehaviour:
@@ -44617,8 +44617,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e38d7d80def6740a6631568e3b32fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3.5
-  rotateSpeed: 40
+  moveSpeed: 6.5
+  rotateSpeed: 60
   rotationDragFactor: 0.5
   rb: {fileID: 1562703879}
   ammunityStock: {fileID: 0}
@@ -44734,7 +44734,7 @@ GameObject:
   - component: {fileID: 1563643058}
   - component: {fileID: 1563643057}
   - component: {fileID: 1563643059}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44911,7 +44911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1565833026}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44997,7 +44997,7 @@ GameObject:
   - component: {fileID: 1576108854}
   - component: {fileID: 1576108853}
   - component: {fileID: 1576108855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46026,7 +46026,7 @@ GameObject:
   - component: {fileID: 1613747533}
   - component: {fileID: 1613747532}
   - component: {fileID: 1613747534}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46206,7 +46206,7 @@ GameObject:
   - component: {fileID: 1615045493}
   - component: {fileID: 1615045494}
   - component: {fileID: 1615045495}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46358,7 +46358,7 @@ GameObject:
   - component: {fileID: 1617432212}
   - component: {fileID: 1617432211}
   - component: {fileID: 1617432213}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_02_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46527,7 +46527,7 @@ GameObject:
   - component: {fileID: 1621795668}
   - component: {fileID: 1621795667}
   - component: {fileID: 1621795669}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_01_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46695,7 +46695,7 @@ GameObject:
   - component: {fileID: 1622077708}
   - component: {fileID: 1622077711}
   - component: {fileID: 1622077710}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46846,7 +46846,7 @@ GameObject:
   - component: {fileID: 1622647177}
   - component: {fileID: 1622647180}
   - component: {fileID: 1622647179}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47148,7 +47148,7 @@ GameObject:
   - component: {fileID: 1646604398}
   - component: {fileID: 1646604397}
   - component: {fileID: 1646604399}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47289,7 +47289,7 @@ GameObject:
   - component: {fileID: 1647813759}
   - component: {fileID: 1647813761}
   - component: {fileID: 1647813760}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_05_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47430,7 +47430,7 @@ GameObject:
   - component: {fileID: 1651084908}
   - component: {fileID: 1651084910}
   - component: {fileID: 1651084909}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_06_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47873,7 +47873,7 @@ GameObject:
   - component: {fileID: 1660166691}
   - component: {fileID: 1660166693}
   - component: {fileID: 1660166692}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_06_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48014,7 +48014,7 @@ GameObject:
   - component: {fileID: 1664522831}
   - component: {fileID: 1664522830}
   - component: {fileID: 1664522832}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48165,7 +48165,7 @@ GameObject:
   - component: {fileID: 1664581429}
   - component: {fileID: 1664581430}
   - component: {fileID: 1664581431}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48316,7 +48316,7 @@ GameObject:
   - component: {fileID: 1666247330}
   - component: {fileID: 1666247331}
   - component: {fileID: 1666247332}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48639,7 +48639,7 @@ GameObject:
   - component: {fileID: 1676482310}
   - component: {fileID: 1676482309}
   - component: {fileID: 1676482311}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48931,7 +48931,7 @@ GameObject:
   - component: {fileID: 1685597644}
   - component: {fileID: 1685597645}
   - component: {fileID: 1685597646}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49082,7 +49082,7 @@ GameObject:
   - component: {fileID: 1692768277}
   - component: {fileID: 1692768278}
   - component: {fileID: 1692768279}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49251,12 +49251,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833121fddfb81444f9559947a16a1263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 0
+  rotateSpeed: 8
   useSmoothRotation: 1
   smoothRotationSpeed: 5
   projectilePrefab: {fileID: 3085477772398715119, guid: 3e94e50158ffd034a9f44229c8ef4852, type: 3}
   firePoint: {fileID: 737685289}
-  fireCooldown: 6
+  fireCooldown: 3
   soundController: {fileID: 129117490}
   ammunityStock: {fileID: 1792951896}
 --- !u!4 &1693038020
@@ -49795,7 +49795,7 @@ GameObject:
   - component: {fileID: 1705895418}
   - component: {fileID: 1705895419}
   - component: {fileID: 1705895420}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_03_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49946,7 +49946,7 @@ GameObject:
   - component: {fileID: 1711953070}
   - component: {fileID: 1711953071}
   - component: {fileID: 1711953072}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51606,7 +51606,7 @@ GameObject:
   - component: {fileID: 1737806009}
   - component: {fileID: 1737806010}
   - component: {fileID: 1737806011}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Palm_03_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51899,7 +51899,7 @@ GameObject:
   - component: {fileID: 1746485084}
   - component: {fileID: 1746485083}
   - component: {fileID: 1746485085}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52417,7 +52417,7 @@ GameObject:
   - component: {fileID: 1751057776}
   - component: {fileID: 1751057775}
   - component: {fileID: 1751057777}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53011,7 +53011,7 @@ GameObject:
   - component: {fileID: 1762530092}
   - component: {fileID: 1762530094}
   - component: {fileID: 1762530093}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crate_01_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53313,7 +53313,7 @@ GameObject:
   - component: {fileID: 1765322420}
   - component: {fileID: 1765322421}
   - component: {fileID: 1765322422}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53730,7 +53730,7 @@ GameObject:
   - component: {fileID: 1787841496}
   - component: {fileID: 1787841497}
   - component: {fileID: 1787841498}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_02_0 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54043,10 +54043,10 @@ MonoBehaviour:
   AP: 10
   HE: 1
   status: ap
-  fireCooldown: 6
+  fireCooldown: 3
   APmax: 20
   HEmax: 2
-  Multiple: 1.9
+  Multiple: 1.2
   isControllablePlayer: 0
 --- !u!114 &1792951897
 MonoBehaviour:
@@ -54074,7 +54074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2035b201e1f9743acc6cea2d7a1573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 110
+  maxHealth: 100
   healthSlider: {fileID: 0}
   currentHealth: 0
   DiedTank: {fileID: 8590166945441213425, guid: 9495879b07f220f49afeb82befb9b53e, type: 3}
@@ -54112,7 +54112,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0021265894, y: -0.05953142}
+  m_Offset: {x: -0.0021265894, y: -0.029990524}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -54122,7 +54122,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.33820572, y: 0.62983805}
+  m_Size: {x: 0.33820572, y: 0.61175865}
   m_EdgeRadius: 0
 --- !u!50 &1792951900
 Rigidbody2D:
@@ -54234,8 +54234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e38d7d80def6740a6631568e3b32fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3.8
-  rotateSpeed: 45
+  moveSpeed: 4.5
+  rotateSpeed: 50
   rotationDragFactor: 0.5
   rb: {fileID: 1792951900}
   ammunityStock: {fileID: 0}
@@ -54250,7 +54250,7 @@ GameObject:
   - component: {fileID: 1801885297}
   - component: {fileID: 1801885298}
   - component: {fileID: 1801885299}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rock_01_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54503,7 +54503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1804912534}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54549,7 +54549,7 @@ GameObject:
   - component: {fileID: 1806708509}
   - component: {fileID: 1806708508}
   - component: {fileID: 1806708510}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54687,7 +54687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1814300592}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BlastTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54735,7 +54735,7 @@ GameObject:
   - component: {fileID: 1815716789}
   - component: {fileID: 1815716790}
   - component: {fileID: 1815716791}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55373,7 +55373,7 @@ GameObject:
   - component: {fileID: 1830554030}
   - component: {fileID: 1830554031}
   - component: {fileID: 1830554032}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_B_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55514,7 +55514,7 @@ GameObject:
   - component: {fileID: 1832462518}
   - component: {fileID: 1832462517}
   - component: {fileID: 1832462519}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56034,7 +56034,7 @@ GameObject:
   - component: {fileID: 1849658364}
   - component: {fileID: 1849658366}
   - component: {fileID: 1849658365}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crate_01_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56513,10 +56513,10 @@ MonoBehaviour:
   AP: 10
   HE: 1
   status: ap
-  fireCooldown: 3
+  fireCooldown: 1.8
   APmax: 20
   HEmax: 2
-  Multiple: 1.2
+  Multiple: 0.6
   isControllablePlayer: 1
 --- !u!114 &1880547428
 MonoBehaviour:
@@ -56543,7 +56543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2035b201e1f9743acc6cea2d7a1573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 90
   healthSlider: {fileID: 1078828748}
   currentHealth: 0
   DiedTank: {fileID: 8590166945441213425, guid: 9495879b07f220f49afeb82befb9b53e, type: 3}
@@ -56581,7 +56581,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0021265298, y: 0.0015644133}
+  m_Offset: {x: -0.0021265298, y: -0.052273095}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -56591,7 +56591,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.34662607, y: 0.56679803}
+  m_Size: {x: 0.34662607, y: 0.61609006}
   m_EdgeRadius: 0
 --- !u!50 &1880547431
 Rigidbody2D:
@@ -56703,7 +56703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e38d7d80def6740a6631568e3b32fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4.5
+  moveSpeed: 5
   rotateSpeed: 50
   rotationDragFactor: 0.5
   rb: {fileID: 1880547431}
@@ -57173,7 +57173,7 @@ GameObject:
   - component: {fileID: 1901163059}
   - component: {fileID: 1901163060}
   - component: {fileID: 1901163061}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57962,7 +57962,7 @@ GameObject:
   - component: {fileID: 1983311622}
   - component: {fileID: 1983311621}
   - component: {fileID: 1983311623}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cactus_03_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58361,7 +58361,7 @@ GameObject:
   - component: {fileID: 2003157506}
   - component: {fileID: 2003157509}
   - component: {fileID: 2003157508}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_06_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58502,7 +58502,7 @@ GameObject:
   - component: {fileID: 2015457108}
   - component: {fileID: 2015457107}
   - component: {fileID: 2015457109}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Czech_Hdgehog_A_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59020,7 +59020,7 @@ GameObject:
   - component: {fileID: 2037701543}
   - component: {fileID: 2037701545}
   - component: {fileID: 2037701544}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_06_0 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59387,7 +59387,7 @@ GameObject:
   - component: {fileID: 2044779435}
   - component: {fileID: 2044779437}
   - component: {fileID: 2044779436}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blast_Trail_05_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59977,7 +59977,7 @@ GameObject:
   - component: {fileID: 2078621209}
   - component: {fileID: 2078621210}
   - component: {fileID: 2078621211}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_03_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60196,7 +60196,7 @@ GameObject:
   - component: {fileID: 2091726165}
   - component: {fileID: 2091726166}
   - component: {fileID: 2091726167}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sacks_01_0 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60348,7 +60348,7 @@ GameObject:
   - component: {fileID: 2094582073}
   - component: {fileID: 2094582072}
   - component: {fileID: 2094582074}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: house(1)_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60696,7 +60696,7 @@ GameObject:
   - component: {fileID: 2108680979}
   - component: {fileID: 2108680981}
   - component: {fileID: 2108680982}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roof3_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60969,12 +60969,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833121fddfb81444f9559947a16a1263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 8
+  rotateSpeed: 8.5
   useSmoothRotation: 1
   smoothRotationSpeed: 5
   projectilePrefab: {fileID: 3085477772398715119, guid: 3e94e50158ffd034a9f44229c8ef4852, type: 3}
   firePoint: {fileID: 1479418944}
-  fireCooldown: 3
+  fireCooldown: 1.8
   soundController: {fileID: 1025993501}
   ammunityStock: {fileID: 1880547427}
 --- !u!4 &2112444447
@@ -61060,7 +61060,7 @@ GameObject:
   - component: {fileID: 2118118827}
   - component: {fileID: 2118118830}
   - component: {fileID: 2118118829}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor_Pipe_B_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61794,7 +61794,7 @@ GameObject:
   - component: {fileID: 2131213327}
   - component: {fileID: 2131213329}
   - component: {fileID: 2131213328}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crate_01_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
